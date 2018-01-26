@@ -1,0 +1,252 @@
+<head>
+    <meta charset="utf-8">
+    <!-- Responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IE Compatibility meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Description meta -->
+    <meta name="description" content="...">
+    <!-- Author meta -->
+    <meta name="author" content="...">
+    <!-- Page Title -->
+    <title>Vuapaper | Forefront of Innovation</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Font Icons Stylesheet -->
+    <link rel="stylesheet" href="https://file.myfontastic.com/VzbhHsppHvzSAY9cDQTJaW/icons.css">
+</head>
+<template name="layout">
+    <main class='main' style="overflow:hidden;">
+    <!--=============== Navbar ===============-->
+    <nav class="navbar fixed-top navbar-toggleable-md">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Navbar Brand -->
+                <a href="/" class="navbar-brand">
+                    <img src="img/logo-main.svg" alt="Vuapaper" width="140">
+                </a>
+                <!-- Toggle Button -->
+                <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+                <!-- Navbar Menu -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link animsition-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link animsition-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/services" class="nav-link animsition-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pricing" class="nav-link animsition-link">Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/samples" class="nav-link animsition-link">Samples</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link animsition-link">Contact</a>
+                    </li>
+                    {{#unless currentUser }}
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link animsition-link">Login</a>
+                    </li>
+                    {{/unless}}
+                    <li class="nav-item d-flex align-items-center">
+                        <a href="#" class="langs">
+                            <span class="active">EN</span>
+                            <span id="ar">AR</span>
+                        </a>
+                        <a href="/enquiry" class="btn btn-template animsition-link wide-vertical">Discuss your project</a>
+                    </li>
+                </ul>
+                {{#if currentUser }}
+                <!-- Dropdown menu -->
+                <div class="dropdown user-dropdown">
+                    <a class="btn dropdown-toggle" href="#" id="userdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#with currentUser}}
+                    <div class="d-flex align-items-center">
+                        <div class="avatar">
+                            <img src="{{getUserPhoto}}" alt="..." class="img-fluid">
+                        </div>
+                        <span class="name">Hi
+                        {{#with profile}}
+                        {{name}}
+                        {{/with}}
+                        </span>
+                    </div>
+                    {{/with}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userdropdown">
+                        <a class="dropdown-item" href="/profile">Profile Page</a>
+                        <a class="dropdown-item" id="logout">Logout</a>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </nav><!--=============== /. Navbar ===============-->
+    <div id="notify-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-success">
+        <strong>Success!</strong>  <span id="notify"></span>
+    </div>
+    <div id="notifyErr-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-danger">
+        <strong>Note!</strong>  <span id="notifyErr"></span>
+    </div>
+    {{> Template.dynamic template=main}}
+    <!--=============== Footer ===============-->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & Information Column -->
+                <div class="info col-md-4">
+                    <div class="logo">
+                        <img src="img/logo-white.svg" alt="Vuapaper" width="150">
+                    </div>
+                    <p>Academic Writing never been easier.</p>
+                    <ul class="contact-info list-unstyled">
+                        <li>
+                            <p>
+                            <i class="fa fa-map-marker"></i>
+                            Muscat, Oman
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:support@vuapaper.com">Support@VuaPaper.com</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:++‬96895444316">+‬968 95444316</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a href="tel:++‬96895444315">+‬968 95444315</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Site Map Column -->
+                <div class="sitemap col-md-4">
+                    <h3 class="text-primary">Site Map</h3>
+                    <div class="d-flex">
+                        <ul class="links list-unstyled">
+                            <li><a href="/" class="animsition-link">Home</a></li>
+                            <li><a href="/pricing" class="animsition-link">Prices</a></li>
+                            <li><a href="/samples" class="animsition-link">Samples</a></li>
+                            <li><a href="/about" class="animsition-link">About Us</a></li>
+                        </ul>
+                        <ul class="links list-unstyled">
+                            <li><a href="/how" class="animsition-link">How it works</a></li>
+                            <li><a href="/services" class="animsition-link">Services</a></li>
+                            <li><a href="/faq" class="animsition-link">FAQ</a></li>
+                            <li><a href="/contact" class="animsition-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Newsletter Column -->
+                <div class="newsletter col-md-4">
+                    <h3 class="text-primary">Newsletter</h3>
+                    <p>Subscribe to our newsletter to keep up with our latest updates.</p>
+                    <form action="#" id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" name="subscriber" id="newsletter" placeholder="Enter Your Email Address">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <ul class="social-icons list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/vuapaper/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/Vuapaper" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/Vuapaper/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/c/VuaPaper" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyrights -->
+        <div class="copyrights">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Copyright &copy; <a href="/" class="animsition-link">VuaPaper.com</a> 2017. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=============== /. Footer ===============-->
+    <!--=============== Scroll To Top ===============-->
+    <div id="scrollTop">
+        <div class="d-flex align-items-center justify-content-end">
+            <i class="fa fa-long-arrow-up"></i>
+            <span>To Top</span>
+        </div>
+    </div>
+    <!--=============== /. Scroll To Top ===============-->
+    </main>
+    <script type="text/javascript">
+    jQuery(function(){
+    jQuery("a.bla-1").YouTubePopUp({
+    autoplay: 1
+    });
+    });
+    </script>
+    <script>
+    $('.nav-item a').click(function(e) {
+    $('.nav-item a').removeClass('active');
+    $(this).addClass('active');
+    });
+    $('#ar').click(function(e) {
+    window.open("/ar","_self")
+    });
+    function notify(msg)
+    {
+    $('#notify-bar').show();
+    $('#notify').html(msg);
+    setTimeout(function(){ $('#notify-bar').hide(); }, 3000);
+    }
+    function notifyErr(msg)
+    {
+    $('#notifyErr-bar').show();
+    $('#notifyErr').html(msg);
+    setTimeout(function(){ $('#notifyErr-bar').hide(); }, 3000);
+    }
+    </script>
+</template>
+<template name="uploadForm">
+{{#with currentUpload}}
+<span id="progress" style="color:red">
+Uploading <b>{{file.name}}</b>:{{progress.get}}%</span>
+{{else}}
+<div class="element">
+    <i class="fa fa-paperclip fa-lc" style="color:red;font-size: 18px;" aria-hidden="true"></i>
+    <input class='attach' type="file" name="" id="fileInput">
+</div>
+{{/with}}
+</template>
+<template name="emojiForm">
+    <div class="element">
+        <i class="fa fa-smile-o fa-le emojicontroler" style="color:red;font-size: 18px;" aria-hidden="true"></i>
+    </div>
+    <div class="emojidiv">
+        <a href="#"><i style="position: absolute;top:0;right:5px;padding:20px;color:red;" class="fa fa-times emojicontroler" aria-hidden="true"></i></a>
+        <br/><br/>
+        {{#each getEmojis}}
+        <a href="#" id="{{this}}" class="emojis">{{#emoji}}{{this}}{{/emoji}}</a>
+        {{/each}}
+    </div>
+</template>

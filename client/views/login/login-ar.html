@@ -1,0 +1,68 @@
+
+	<template name="loginar">
+
+	
+			<script>$(document).prop('title', 'Vuapaper | الدخول');</script>
+        <!--=============== Hero Section ===============-->
+        <section class="hero hero-page hero-login has-pattern-stripes">
+            <div class="container text-center">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb d-flex justify-content-center">
+                    <li class="breadcrumb-item"><a href="/ar" class="animsition-link">الرئيسية</a></li>
+                    <li class="breadcrumb-item active">تسجيل الدخول</li>
+                </ul>
+
+                <h1>تسجيل الدخول</h1>
+            </div>
+        </section>
+        <!--=============== /. Hero Section ===============-->
+
+
+        <!--=============== Login Section ===============-->
+        <section class="login ltr">
+            <div class="row">
+
+                <!-- Login Form -->
+                <div class="form-holder col-lg-8 push-lg-2">
+                    <form  id="login-form" class="has-shadow rtl font-arabic">
+                        <div class="form-group">
+                            <input type="email" class="input-material" name="useremail" id="useremail">
+                            <label for="useremail">البريد الإلكتروني</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input-material" name="password" id="password">
+                            <label for="password">كلمة المرور</label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-template-outlined font-arabic loginbtn" type="submit">دخول</button>
+                        </div>
+
+                        <div class="divider d-flex align-items-center justify-content-center">
+                            <div class="text">أو قم بالدخول من خلال</div>
+                        </div>
+
+                        <div class="alternate-login d-flex align-items-center justify-content-center flex-column flex-md-row ltr">
+                            <a href="#" id="facebook-login" class="btn social-btn social-facebook font-english">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </a>
+                            <a href="#" id="twitter-login" class="btn social-btn social-twitter font-english">
+                                <i class="fa fa-twitter"></i> Twitter
+                            </a>
+                            <a href="#" id="google-login" class="btn social-btn social-google-plus font-english">
+                                <i class="fa fa-google-plus"></i> Google Plus
+                            </a>
+                        </div>
+
+                        <div class="helpers d-flex justify-content-between flex-column flex-md-row">
+                            <p>لا تمتلك حساب حتي الأن؟ <a href="/signup-ar" class="text-primary animsition-link">قم بالتسجيل الأن</a></p>
+                            <p><a href="#">نسيت كلمة المرور؟</a></p>
+                        </div>
+                    </form>
+                </div><!-- /. Login Form -->
+            </div>
+        </section>
+
+        <!--=============== Login Section ===============-->
+
+
+		</template>

@@ -1,0 +1,501 @@
+<template name="indexar">
+    <!--=============== Hero Section ===============-->
+    <section class="hero hero-home has-pattern-stripes">
+        <div class="container d-flex align-items-center">
+            <div class="row d-flex align-items-center">
+                <!-- Text Column -->
+                <div class="col-lg-7 text-col">
+                    <h1><span>الكتابة الأكاديمية</span> لم تكن بهذه السهولة من قبل.</h1>
+                    <p class="text-template">من اليوم .. أصبح حل مشاكل الكتابة الأكاديمية ممكناً! نحن نقوم بكتابة كل أنواع المحتويات والأوراق بمختلف مواضيعها من الصفر.</p>
+                    <a href="/orderar" class="btn-template-outlined wide animsition-link">اطلب الآن</a>
+                    <a class="bla-1 btn-template has-shadow" href="https://www.youtube.com/watch?v=m-hOnrfdMYU"> تعرف على المزيد<i class="icon-play-button"></i></a>
+                </div>
+                <!-- Get a Quote Column -->
+                <div class="col-lg-5 form-col">
+                    <div class="get-quote has-shadow">
+                        <div class="title">
+                            <h3 class="underlined-gradient">إحسب التكلفة</h3>
+                        </div>
+                        <form action="#" id="getQuote">
+                            <div class="form-group">
+                                <div class="currency d-flex flex-wrap">
+                                    <label for="usd">
+                                        <input type="radio" name="currency" id="usd" class="hidden" checked>
+                                        <span class="btn-gradient shadow-on-hover">USD</span>
+                                    </label>
+                                    <label for="omr">
+                                        <input type="radio" name="currency" id="omr" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">OMR</span>
+                                    </label>
+                                    <label for="sar">
+                                        <input type="radio" name="currency" id="sar" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">SAR</span>
+                                    </label>
+                                    <label for="qar">
+                                        <input type="radio" name="currency" id="qar" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">QAR</span>
+                                    </label>
+                                    <label for="aed">
+                                        <input type="radio" name="currency" id="aed" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">AED</span>
+                                    </label>
+                                    <label for="kwd">
+                                        <input type="radio" name="currency" id="kwd" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">KWD</span>
+                                    </label>
+                                    <label for="bhd">
+                                        <input type="radio" name="currency" id="bhd" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">BHD</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="academic-level">الدرجة الأكاديمية</label>
+                                <select style="height:50%"  class="form-control" id="academic">
+                                    <option value="0">دبلوم</option>
+                                    <option value="1">بكالوريوس</option>
+                                    <option value="2">ماجستير</option>
+                                    <option value="3">دكتوراه</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="paper-type">نوع العمل</label>
+                                <select style="height:50%"  class="form-control" id="paper-type">
+                                    <option value="Article">مقال</option>
+                                    <option value="Article-Review">تقييم مقال</option>
+                                    <option value="Biography">سيرة شخصية</option>
+                                    <option value="Book-Review">مراجعة كتاب</option>
+                                    <option value="Business-Plan">خطة عمل</option>
+                                    <option value="Case-Study">رسالة تغطية</option>
+                                    <option value="Course-Work">كتابة إبداعية</option>
+                                    <option value="Cover-Letter">سيرة ذاتية</option>
+                                    <option value="Creative-Writing">أطروحة</option>
+                                    <option value="Curriculum-Vitae">ملخص أطروحة</option>
+                                    <option value="Dissertation">فصل من الأطروحة</option>
+                                    <option value="Dissertation-Abstract">خاتمة أطروحة</option>
+                                    <option value="Dissertation-Chapter">فرضية أطروحة</option>
+                                    <option value="Dissertation-Conclusion">فرضية أطروحة</option>
+                                    <option value="Dissertation-Hypothesis">منهجية أطروحة</option>
+                                    <option value="Dissertation-Introduction">نقد أدبي</option>
+                                    <option value="Dissertation-Methodology">تقييم فيلم</option>
+                                    <option value="Dissertation-Proposal">تقرير</option>
+                                    <option value="Dissertation-Results">ورقة بحثية</option>
+                                    <option value="Essay">مقترح بحثي</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">الموعد النهائي </label>
+                                <select class="form-control" style="height:50%" id="deadline">
+                                    {{#each getItems}}
+                                    <option value="{{deadline}}">
+                                    {{deadline}}
+                                    {{#if $eq deadlineunit "0"}} أيام {{/if}}
+                                    {{#if $eq deadlineunit "1"}} ساعة{{/if}}
+                                    </option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="form-group pages-quantity">
+                                <label for="pages-quantity">عدد الصفحات</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="minus-btn pbtn">
+                                        <i class="icon-android-remove"></i>
+                                    </div>
+                                    <input type="text" value="1" class="quantity" id="pages-quantity">
+                                    <div class="plus-btn pbtn">
+                                        <i class="icon-android-add"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="price underlined-gradient">السعر الإجمالي <span>{{getPrice}}</span></div>
+                                <a href="/orderar" class="btn btn-template animsition-link">أكمل الخطوات</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Hero Section ===============-->
+    <!--=============== Main Parts Section ===============-->
+    <section class="parts gray-bg">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines">أقسامنا الرئيسية</h2>
+            </header>
+            <div class="row d-flex align-items-stetch">
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/document.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>توفير الأوراق البحثية</span></h3>
+                        <p>نحن نعمل على تقديم كل أنواع الكتابات الأكاديمية بما في ذلك الأبحاث – المقالات ذات المدى المحدد – الأوراق – الأطروحات – الأوراق البيضاء – الترجمة – التقارير - .. وغيرها من الكتابات بشكل وأسلوب إحترافي. هذه هي الواجهة الرئيسية لك لتحصل على كتاباتك الأكاديمية الكاملة.</p>
+                        <a href="/orderar" class="btn btn-template-outlined animsition-link">تصفح</a>
+                    </div>
+                </div><!-- /. Part -->
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/management.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>حل المسائل والواجبات</span></h3>
+                        <p>نحن متخصصون في حل معظم أصعب المسائل الأكاديمية الهندسية، الفيزياء، الكيمياء ومادة الأحياء. لذلك، إذا كنت تواجه أية صعوبة في حل المشاكل، إتصل بنا الآن.</p>
+                        <a href="/enquiryar" class="btn btn-template-outlined animsition-link">تصفح</a>
+                    </div>
+                </div><!-- /. Part -->
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/vector.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>الرسومات الهندسية وتصميم وتطوير المواقع الإلكترونية</span></h3>
+                        <p>يُمكنك دائماً الإعتماد علينا في أمور تصميم وبرمجة المواقع الإلكترونية .. وكذلك الرسومات الهندسية بإستخدام الأوتوكاد.</p>
+                        <a href="/enquiryar" class="btn btn-template-outlined animsition-link">تصفح</a>
+                    </div>
+                </div><!-- /. Part -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Main Parts Section ===============-->
+    <!--=============== Statistics Section ===============-->
+    <section class="statistics has-gradient padding-small has-pattern-memphis">
+        <div class="container text-center">
+            <div class="row">
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2 font-english"><strong class="counter">145</strong>+</h3>
+                    <p>كاتب ، مصمم ومبرمجين محترفين</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2 font-english"><strong class="counter">570</strong>+</h3>
+                    <p>طلب تم تسليمه</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2 font-english"><strong class="percent-counter">97.2</strong>%</h3>
+                    <p>عملاء راضين</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2 font-english"><strong class="counter">0</strong>%</h3>
+                    <p>محتوى غير فريد</p>
+                </div><!-- /. Stat -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Statistics Section ===============-->
+    <!--=============== Features Section ===============-->
+    <section class="features">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines with-bg-text" data-text="مميزاتنا">لماذا نحن الأفضل؟</h2>
+                <p class="text-template">قم بشراء مقال أونلاين بأنسب سعر و أفضل جودة.</p>
+            </header>
+            <div class="row">
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/pros-and-cons.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>مراجعة مجانية</h3>
+                        <p>نحن نقدم عدد غير محدود من المراجعات بدون أية تكاليف إضافية. كتّابنا مصممون على تلبية طلباتك والتأكد من أنك راضياً تماماً عنها.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/pen.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>كتابة أصلية</h3>
+                        <p>كل كلمة ستقوم بقراءتها في الأوراق التي نقوم بكتابتها هي كلمات أصلية، وفريدة من نوعها.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/clock.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>التزامنا بالمواعيد</h3>
+                        <p>الوقت هو من أهم الأمور هذه الأيام ونحن نعي أنك تواصلت معنا لنقوم بإنقاذك قبل فوات الآوان.</p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/shield.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>السرية</h3>
+                        <p>سنقوم بحماية بياناتك الشخصية في بئر عميق صعب الوصول إليه. لن يتم تسريب أية بيانات شخصية، إلا إذا وافقت أنت على ذلك.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/idea.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>جودة لا تضاهى</h3>
+                        <p>نحن نركز على جودة ونوعية الخدمات التي نقدمها في كل مرة، بغض النظر عن المادة أو المحتوى وصعوبته.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/24-hours.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>دعم 24/7</h3>
+                        <p>نحن دائماً متواجدون لخدمتك ومساعدتك, ستجدنا دائماً عند الحاجة.</p>
+                    </div>
+                </div><!-- /. Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Features Section ===============-->
+    <!--=============== Services Section ===============-->
+    <section class="services no-padding-top">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+                <!-- Quote Column -->
+                <div class="col-lg-6 ltr">
+                    <div class="quote d-flex align-items-center text-center has-pattern-memphis">
+                        <p class="ltr"><i class="fa fa-quote-left"></i><span class="rtl d-inline">خبراتنا تسمح لنا بتوفير الكتابات الأكاديمية للطلاب بكل جودة وإحترافية، كذلك خدمات التدقيق اللغوي وكل ماتحتاجه من حلول. والأفضل من ذلك أن أسعارنا معقولة جداً، حتى لهؤلاء الذين لا يحتاجون للكتابة الأكاديمية</span><i class="fa fa-quote-right"></i></p>
+                    </div>
+                </div> <!-- /. Quote Column -->
+                <!-- Text Column -->
+                <div class="text col-lg-6">
+                    <h2 class="has-lines">ماذا نقدم</h2>
+                    <p class="text-template">الجودة، السعر، الإلتزام بوقت التسليم، كل مانقدمه هو في سبيل سعينا جاهدين لتقديم خدمات على أعلى مستوى .. فنحن لا نخفق أبداً أمام عملائنا.</p>
+                    <ul class="features-list list-inline text-right">
+                        <li class="list-inline-item has-ellipsis"><a href="/orderar" class="animsition-link">الكتابة الأكاديمية من الصفر</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/orderar" class="animsition-link">أعمال التدقيق اللغوي</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/orderar" class="animsition-link">حل المشكلات</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/orderar" class="animsition-link">تصميم وتطوير المواقع الإلكترونية</a></li>
+                    </ul>
+                    <a href="/orderar" class="btn-template-outlined animsition-link">أطلب الأن</a>
+                </div><!-- /. Text Column -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Services Section ===============-->
+    <!--=============== Free Features Section ===============-->
+    <section class="free-features no-padding-top ltr">
+        <div class="container text-center">
+            <header class="rtl">
+                <h2 class="has-lines">استمتع بهذه الميزات المجانية</h2>
+            </header>
+            <div class="row d-flex justify-content-center">
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>مسودات</h3>
+                    <p>التخطيط الأنيق للعمل هو جزء أساسي في الكتابات الأكاديمية. أحصل على مخطط مجاني وتفوق بعملك.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>تعديلات غير محدودة</h3>
+                    <p>لم يعجبك ما قدمناه لك؟ لا توجد مشكلة، نحن دائماً على إستعداد للتغيير وإعادة العمل في إطار وقت التسليم الذي قمت بتحديده في كل مرة تطلب ذلك.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>صفحة العنوان</h3>
+                    <p>توضيح النقاط الرئيسية لعملك مثل العنوان, الكاتب, السعر, ...إلخ. بطريقة إحترافية وأنيقة.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>الفهرس</h3>
+                    <p>لتسمح للقراء بالوصول السهل والسريع لمحتويات عملك. أحصل على تصميم جذاب ومجاني.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>تقارير كشف سرقة المحتوى</h3>
+                    <p>بكل ثقة, لا يوجد بالسوق برنامج مجاني متاح يُمكن الإعتماد عليه لكشف المحتوى المسروق، ولكن هنا، نحن نصنع الفرق الحقيقي. لك أنت فقط، نحن فخورون بتوفير تقارير توضيح صدقنا وفرادة عملنا، حتى تكون مطمئنا أن العمل أصلي و أن مشروعك لن يتم استبعاده.</p>
+                </div> <!-- /. Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Free Features Section ===============-->
+    <!--=============== Testimonials Section ===============-->
+    <section class="testimonials gray-bg">
+        <div class="container text-center">
+            <header>
+                <h2 class="with-bg-text has-lines heading-bold" data-text="عملاءنا">آراء عملائنا</h2>
+                <p class="text-template">لازلت متردداً في إتخاذ القرار؟ لازلت تفكر؟ حسناً، تعرف الآن على آراء عملائنا الراضين.</p>
+            </header>
+            <!-- Testimonials Slider -->
+            <div class="owl-carousel owl-theme testimonials-slider text-center">
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/james.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>جيمس تيرنر</h4>
+                    </div>
+                    <p class="lead">
+                    تسلمت العمل عبر البريد الإلكتروني ثاني يوم قيامي بالطلب. شكراً للعمل الرائع, لقد أنقذتم حياتي. إذا لم تكونوا أنتم، كنت سأضطر للحصول على الكورس مرة أخرى.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/hector.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>هيكتور ناتشو</h4>
+                    </div>
+                    <p class="lead">
+                    أنتم جعلتموني أعيد التفكير في كل شيء. تلقيت عملي وفقاً لتعليماتي وتوجيهاتي وقبل الموعد المحدد للتسليم أنا متفائل جداً بهذا.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/ashley.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>أشلي ويليامز</h4>
+                    </div>
+                    <p class="lead">
+                    شكراً على العمل الممتاز، عمل سريع وفقاً لمتطلباتي، وبنفس الشكل الذي أحبه. فريق الدعم كان متعاون للغاية، وساعدني للقيام بعمل الطلب.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/frank.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>فرانك وود</h4>
+                    </div>
+                    <p class="lead">
+                    كنت دائماً متردداً في إستخدام هذا النوع من الخدمات لأنني أشك في جودة الخدمة المقدمة. ويالدهشتي، فقد كنت مخطئاً. فأنا تلقيت ورقة بحثي بشكل ممتاز. شكراً!
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/nadia.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>نادية ستارك</h4>
+                    </div>
+                    <p class="lead">
+                    لقد تعودت على إستخدام هذا النوع من الخدمات لمقالاتي البحثية في الجامعة. ومؤخراً احتجت مقالتين لعملي. شيء ممتاز عندما يكون هناك هذا النوع من الأعمال والخدمات على الإنترنت والتي لا تخدع أحداً. إذا كنت بحاجة لمساعدة حقيقية. هذه هي الخدمة التي تبحث عنها.
+                    </p>
+                </div> <!-- /. item -->
+            </div><!-- End Testimonials Slider -->
+        </div>
+    </section>
+    <!--=============== /. Testimonials Section ===============-->
+    <!--=============== Payment Section ===============-->
+    <section class="payment padding-small">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
+                <!-- Item [paypal] -->
+                <div class="paypal d-flex justify-content-center">
+                    <img src="img/paypal.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [visa] -->
+                <div class="visa d-flex justify-content-center">
+                    <img src="img/visa.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [mastercard] -->
+                <div class="mastercard d-flex justify-content-center">
+                    <img src="img/mastercard.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [western union] -->
+                <div class="western-union d-flex justify-content-center">
+                    <img src="img/western-union.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [bank muskat] -->
+                <div class="bank-muskat d-flex justify-content-center">
+                    <img src="img/bankmuscat.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Payment Section ===============-->
+    <!--=============== Report Section ===============-->
+    <section class="report">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-8">
+                    <h2>تقارير Turnitin</h2>
+                    <p class="text-template">أطلب الآن فحص نهائي وشامل للعمل لبيان أي سرقة للمحتوى لتجنب وجود الأخطاء التي قد تؤدي إلى اقصاء عملك <strong class="underlined-gradient font-english"> $9.90 </strong></p>
+                </div>
+                <div class="col-md-4 clearfix">
+                    <a href="/reportar" class="btn-template animsition-link pull-left">أطلب الأن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Report Section ===============-->
+    <!--=============== Scroll To Top ===============-->
+    <div id="scrollTop">
+        <div class="d-flex align-items-center justify-content-end">
+            <i class="fa fa-long-arrow-up"></i>
+            <span>To Top</span>
+        </div>
+    </div>
+    <!--=============== /. Scroll To Top ===============-->
+    <!--=============== Preloader ===============-->
+    <div class="preloader">
+        <div class="preloader-inner text-center d-flex align-items-center justify-content-center">
+            <div class="loading">
+                <strong data-content="VuaPaper">VuaPaper</strong>
+                <h3 class="font-arabic">نحن رواد الإبتكار</h3>
+            </div>
+        </div>
+    </div>
+    <!--=============== /. Preloader ===============-->
+</template>

@@ -1,0 +1,37 @@
+<template name="staffmessages">
+    <!--=============== Main Parts Section ===============-->
+    <section class="parts gray-bg">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines">Send Message</h2>
+            </header>
+            <div class="row d-flex align-items-stetch">
+                <!-- Part -->
+                <div class="col-lg-12">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="form-group">
+                            <label for="usr">Message Headtitle</label>
+                            <input type="text" class="form-control" id="msgtitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Message Body</label>
+                            <input type="text" class="form-control" id="msgtext">
+                        </div>
+                        <div class="form-group">
+                            <label for="usr">Recipients</label>
+                            <input  type="text" class="form-control" id="searchbtn">
+                            <select id="clients" class="form-control" multiple>
+                                {{#each getClients}}
+                                <option  value="{{_id}}">{{#with profile}}{{name}}{{/with}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <button class="btn-template" id="send" type="submit">Send Message</button>
+                        <button class="btn-template" id="sendall" type="submit">Send to all</button>
+                    </div>
+                </div><!-- /. Part -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Main Parts Section ===============-->
+</template>

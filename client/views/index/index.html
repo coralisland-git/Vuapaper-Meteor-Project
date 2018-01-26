@@ -1,0 +1,503 @@
+<template name="index">
+    <!-- <div class="animsition"> -->
+    <!--=============== Hero Section ===============-->
+    <section class="hero hero-home has-pattern-stripes">
+        <div class="container d-flex align-items-center">
+            <div class="row d-flex align-items-center">
+                <!-- Text Column -->
+                <div class="col-lg-7 text-col">
+                    <h1><span>Academic Writing</span> never been easier.</h1>
+                    <p class="text-template">Every academic writing dilemma can be solved! We write all types of papers in different subject areas from scratch.</p>
+                    <a href="/order" class="btn-template-outlined wide animsition-link">Order Now</a>
+                    <a class="bla-1 btn-template has-shadow" href="https://www.youtube.com/watch?v=m-hOnrfdMYU">Learn More <i class="icon-play-button"></i></a>
+                </div>
+                <!-- Get a Quote Column -->
+                <div class="col-lg-5 form-col">
+                    <div class="get-quote has-shadow">
+                        <div class="title">
+                            <h3 class="underlined-gradient">Calculate the price</h3>
+                        </div>
+                        <form action="#" id="getQuote">
+                            <div class="form-group">
+                                <div class="currency d-flex flex-wrap">
+                                    <label for="usd">
+                                        <input type="radio" name="currency" id="usd" class="hidden" checked>
+                                        <span class="btn-gradient shadow-on-hover">USD</span>
+                                    </label>
+                                    <label for="omr">
+                                        <input type="radio" name="currency" id="omr" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">OMR</span>
+                                    </label>
+                                    <label for="sar">
+                                        <input type="radio" name="currency" id="sar" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">SAR</span>
+                                    </label>
+                                    <label for="qar">
+                                        <input type="radio" name="currency" id="qar" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">QAR</span>
+                                    </label>
+                                    <label for="aed">
+                                        <input type="radio" name="currency" id="aed" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">AED</span>
+                                    </label>
+                                    <label for="kwd">
+                                        <input type="radio" name="currency" id="kwd" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">KWD</span>
+                                    </label>
+                                    <label for="bhd">
+                                        <input type="radio" name="currency" id="bhd" class="hidden">
+                                        <span class="btn-gradient shadow-on-hover">BHD</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="academic-level">Academic Level</label>
+                                <select style="height:50%"  class="form-control" id="academic">
+                                    <option value="0">Diploma</option>
+                                    <option value="1">Bachelor</option>
+                                    <option value="2">Master</option>
+                                    <option value="3">PhD</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="paper-type">Type of Paper</label>
+                                <select style="height:50%"  class="form-control" id="paper-type">
+                                    <option value="Article">Article</option>
+                                    <option value="Article-Review">Article Review</option>
+                                    <option value="Biography">Biography</option>
+                                    <option value="Book-Review">Book Review</option>
+                                    <option value="Business-Plan">Business Plan</option>
+                                    <option value="Case-Study">Case Study</option>
+                                    <option value="Course-Work">Course Work</option>
+                                    <option value="Cover-Letter">Cover Letter</option>
+                                    <option value="Creative-Writing">Creative Writing</option>
+                                    <option value="Curriculum-Vitae">Curriculum Vitae</option>
+                                    <option value="Dissertation">Dissertation</option>
+                                    <option value="Dissertation-Abstract">Dissertation Abstract</option>
+                                    <option value="Dissertation-Chapter">Dissertation Chapter</option>
+                                    <option value="Dissertation-Conclusion">Dissertation Conclusion</option>
+                                    <option value="Dissertation-Hypothesis">Dissertation Hypothesis</option>
+                                    <option value="Dissertation-Introduction">Dissertation Introduction</option>
+                                    <option value="Dissertation-Methodology">Dissertation Methodology</option>
+                                    <option value="Dissertation-Proposal">Dissertation Proposal</option>
+                                    <option value="Dissertation-Results">Dissertation Results</option>
+                                    <option value="Essay">Essay</option>
+                                    <option value="Literature-Review">Literature Review</option>
+                                    <option value="Movie-Review">Movie Review</option>
+                                    <option value="Report">Report</option>
+                                    <option value="Research-Paper">Research Paper</option>
+                                    <option value="Research-Proposal">Research Proposal</option>
+                                    <option value="Resume">Resume</option>
+                                    <option value="Thesis">Thesis</option>
+                                    <option value="Thesis-Proposal">Thesis Proposal</option>
+                                    <option value="Thesis-Statement">Thesis Statement</option>
+                                    <option value="Translation-Arabic-to-English">Translation Arabic to English</option>
+                                    <option value="Translation-English-t- Arabic">Translation English to Arabic</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="deadline">Deadline</label>
+                                <select class="form-control" style="height:50%" id="deadline">
+                                    {{#each getItems}}
+                                    <option value="{{deadline}}">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}} </option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="form-group pages-quantity">
+                                <label for="pages-quantity">Pages</label>
+                                <div class="d-flex align-items-center">
+                                    <div class="minus-btn pbtn">
+                                        <i class="icon-android-remove"></i>
+                                    </div>
+                                    <input type="text" value="1" class="quantity" id="pages-quantity">
+                                    <div class="plus-btn pbtn">
+                                        <i class="icon-android-add"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="price underlined-gradient">Total Price: <strong class="no text-secondary">{{getPrice}}</strong></div>
+                                <a href="/order" class="btn btn-template animsition-link">Continue</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Hero Section ===============-->
+    <!--=============== Main Parts Section ===============-->
+    <section class="parts gray-bg">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines">Our main sections</h2>
+            </header>
+            <div class="row d-flex align-items-stetch">
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/document.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>Buy research papers</span></h3>
+                        <p>We work in all kinds of academic writings including research papers, term essays, papers, dissertations, white papers, translations, reports etc with complete format and style. This is a one stop destination for complete academic requirements.</p>
+                        <a href="/order" class="btn btn-template-outlined animsition-link">Browse</a>
+                    </div>
+                </div><!-- /. Part -->
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/management.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>Solve problems and assignment</span></h3>
+                        <p>We are expert in solving the most difficult academic engineering, physics, chemistry, biology problems. So, if you have any difficulty solving problems- just contact us.</p>
+                        <a href="/enquiry" class="btn btn-template-outlined animsition-link">Browse</a>
+                    </div>
+                </div><!-- /. Part -->
+                <!-- Part -->
+                <div class="col-lg-4">
+                    <div class="part shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/vector.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3><span>Geometric drawing and Web design &amp; Development</span></h3>
+                        <p>You can always depend on us in terms of design and programming of sites and drawing of engineering draw Auto Cad.</p>
+                        <a href="/enquiry" class="btn btn-template-outlined animsition-link">Browse</a>
+                    </div>
+                </div><!-- /. Part -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Main Parts Section ===============-->
+    <!--=============== Statistics Section ===============-->
+    <section class="statistics has-gradient padding-small has-pattern-memphis">
+        <div class="container text-center">
+            <div class="row">
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2"><strong class="counter">145</strong>+</h3>
+                    <p>Professional writer, designer &amp; developer</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2"><strong class="counter">750</strong>+</h3>
+                    <p>Orders Delivered</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2"><strong class="percent-counter">97.2</strong>%</h3>
+                    <p>Customer Satisfication</p>
+                </div><!-- /. Stat -->
+                <!-- Stat -->
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="h2"><strong class="counter">0</strong>%</h3>
+                    <p>Non-unique Content</p>
+                </div><!-- /. Stat -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Statistics Section ===============-->
+    <!--=============== Features Section ===============-->
+    <section class="features">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines with-bg-text" data-text="Features">Why Choosing Us</h2>
+                <p class="text-template">Buy essay online for the best price of the top-notch quality</p>
+            </header>
+            <div class="row">
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/pros-and-cons.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Free Revisions</h3>
+                        <p>We offer unlimited revisions without any extra cost. Our writers are determined to fulfill your requests until you are completely satisfied.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/pen.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Original Writing</h3>
+                        <p>Every word you read in the paper we’ve written is original, every though is unique.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/clock.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Always On Time</h3>
+                        <p>Time is the most important thing these days and we understand that you turned to us to save yours.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/shield.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Confidentiality</h3>
+                        <p>We will protect your personal information like a vault in Fort Knox. No personal information will ever leak, unless you say so.</p>
+                    </div>
+                </div>
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/idea.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Unmatched Qulaity</h3>
+                        <p>We stand behind the quality of our services every time, no matter the subject or difficulty.</p>
+                    </div>
+                </div><!-- /. Item -->
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="item shadow-on-hover pattern-memphis-on-hover">
+                        <div class="icon">
+                            <img src="img/24-hours.gif" alt="..." class="img-fluid">
+                        </div>
+                        <h3>Support 24/7</h3>
+                        <p>We're always there for you, working nonstop to help you in your hour of need.</p>
+                    </div>
+                </div><!-- /. Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Features Section ===============-->
+    <!--=============== Services Section ===============-->
+    <section class="services no-padding-top">
+        <div class="container">
+            <div class="row d-flex align-items-stretch">
+                <!-- Quote Column -->
+                <div class="col-lg-6">
+                    <div class="quote d-flex align-items-center text-center has-pattern-memphis">
+                        <p><i class="fa fa-quote-left"></i> Our expertise allows us to provide students with quality academic writing services, editing &amp; proofreading services and whatever you need. What’s better is that our prices are very reasonable, to the point where even those who do not need academic<i class="fa fa-quote-right"></i></p>
+                    </div>
+                </div> <!-- /. Quote Column -->
+                <!-- Text Column -->
+                <div class="text col-lg-6">
+                    <h2 class="has-lines">What We Offer</h2>
+                    <p class="text-template">The quality, the price, timing, everything we do we strive to do at the highest level, it is not our style to disappoint our client.</p>
+                    <ul class="features-list list-inline">
+                        <li class="list-inline-item has-ellipsis"><a href="/order" class="animsition-link">Writing From Scratch</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/order" class="animsition-link">Academic Proofreading</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/order" class="animsition-link">Professional Editing</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/order" class="animsition-link">Problem Solving</a></li>
+                        <li class="list-inline-item has-ellipsis"><a href="/order" class="animsition-link">Web Design and Development</a></li>
+                    </ul>
+                    <a href="/order" class="btn btn-template-outlined animsition-link">Order Now</a>
+                </div><!-- /. Text Column -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Services Section ===============-->
+    <!--=============== Free Features Section ===============-->
+    <section class="free-features no-padding-top">
+        <div class="container text-center">
+            <header>
+                <h2 class="has-lines">Enjoy these free features</h2>
+            </header>
+            <div class="row d-flex justify-content-center">
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>Outline</h3>
+                    <p>A neat outline is as essential a part as your academic writing itself. Get a free outline and excel your work.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>Unlimited Amendments</h3>
+                    <p>You don’t like what we deliver? No problem. We are always ready to change and redo within your time frame every time you ask for it.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>Title page</h3>
+                    <p>Exhibit the main details of your work e.g. title, author, price etc. in an acknowledged, elegant manner.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>Bibliography</h3>
+                    <p>Allow readers to easily access all parts of your work. Get a free, stylish and topic-consistent design now.</p>
+                </div> <!-- /. Item -->
+                <!-- Item -->
+                <div class="item col-lg-4">
+                    <h3>Plagiarism Report</h3>
+                    <p>There is no software available in the market that is reliable and free at the same time. Here, we make the real difference. For you, we are compelled to provide you a plagiarism report as a proof of our honest work.</p>
+                </div> <!-- /. Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Free Features Section ===============-->
+    <!--=============== Testimonials Section ===============-->
+    <section class="testimonials gray-bg">
+        <div class="container text-center">
+            <header>
+                <h2 class="with-bg-text has-lines heading-bold" data-text="Testimonials">Our Clients’ Feedback</h2>
+                <p class="text-template">Still undecided? Still thinking? Well, listen to our satisfied customers.</p>
+            </header>
+            <!-- Testimonials Slider -->
+            <div class="owl-carousel owl-theme testimonials-slider text-center">
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/james.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>James Turner</h4>
+                    </div>
+                    <p class="lead">
+                    Received the paper over email the next day after I placed an order. Thanks for the good job, you're just lifesavers. If it weren’t for you I’d have to go through the course once again.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/hector.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>Hector Nacho</h4>
+                    </div>
+                    <p class="lead">
+                    You guys made me rethink the whole thing. I received my paper according to my instructions and way before my deadline. I am so hopeful about this.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/ashley.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>Ashley Williams</h4>
+                    </div>
+                    <p class="lead">
+                    Thanks for the excellent job. Swift and on the subject, just the way I like it. The Support team was quite nice to me, helped me with the order placing process.
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/frank.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>Frank Wood</h4>
+                    </div>
+                    <p class="lead">
+                    I was always afraid of using such services because I doubted about the quality you provide. To my surprise, I was wrong. I received the research paper of excellent quality. Thank you!
+                    </p>
+                </div> <!-- /. item -->
+                <!-- item -->
+                <div class="item col-lg-10 push-lg-1">
+                    <div class="quote"><img src="img/quote.svg" alt="..."></div>
+                    <div class="user">
+                        <div class="profile">
+                            <img class="rounded-circle" src="img/nadia.jpg" alt="...">
+                        </div>
+                        <ul class="rate list-inline">
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item active"><i class="fa fa-star"></i></li>
+                        </ul>
+                        <h4>Nadia Stark</h4>
+                    </div>
+                    <p class="lead">
+                    I use to order essays back in college with this service. And recently I needed couple of articles for my work. It's awesome when there are services like this on the Internet that do not fool around. If you need real help - this is the service to use.
+                    </p>
+                </div> <!-- /. item -->
+            </div><!-- End Testimonials Slider -->
+        </div>
+    </section>
+    <!--=============== /. Testimonials Section ===============-->
+    <!--=============== Payment Section ===============-->
+    <section class="payment padding-small">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between flex-column flex-md-row">
+                <!-- Item [paypal] -->
+                <div class="paypal d-flex justify-content-center">
+                    <img src="img/paypal.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [visa] -->
+                <div class="visa d-flex justify-content-center">
+                    <img src="img/visa.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [mastercard] -->
+                <div class="mastercard d-flex justify-content-center">
+                    <img src="img/mastercard.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [western union] -->
+                <div class="western-union d-flex justify-content-center">
+                    <img src="img/western-union.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+                <!-- Item [bank muskat] -->
+                <div class="bank-muskat d-flex justify-content-center">
+                    <img src="img/bankmuscat.svg" alt="..." class="img-fluid">
+                </div> <!-- Item -->
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Payment Section ===============-->
+    <!--=============== Report Section ===============-->
+    <section class="report">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-8">
+                    <h2>Turnitin Report</h2>
+                    <p class="text-template">Order a final check for your files to avoid plagiarism or project disqualification. <strong class="underlined-gradient">$9.90</strong></p>
+                </div>
+                <div class="col-md-4 clearfix">
+                    <a href="/report" class="btn-template animsition-link pull-right">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=============== /. Report Section ===============-->
+    <!-- </div> -->
+    <!--=============== Preloader ===============-->
+    <div class="preloader">
+        <div class="preloader-inner text-center d-flex align-items-center justify-content-center">
+            <div class="loading">
+                <strong data-content="VuaPaper">VuaPaper</strong>
+                <span>Forefront of Innovation</span>
+            </div>
+        </div>
+    </div>
+    <!--=============== /. Preloader ===============-->
+</template>

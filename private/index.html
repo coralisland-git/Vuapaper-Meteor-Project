@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,500,700');
+
+            body {
+              background: #f5f5f5;
+              padding: 0;
+              margin: 0;
+            }
+
+            h1 {
+                margin: 0;
+                padding-bottom: 20px;
+            }
+
+            h2, h3 {
+                color: #333;
+                margin-bottom: 0;
+                padding-bottom: 20px;
+            }
+
+            table {
+              border-collapse: collapse;
+              border-spacing: 0;
+              width: 100%;
+              font-family: "Libre Franklin", arial, sans-serif;
+            }
+
+            .email-container {
+              max-width: 700px;
+              width: 100%;
+              background: #fff;
+              font-family: Arial, sans-serif;
+            }
+
+            .email-header {
+              background-image: url(header-img.png);
+              background-size: cover;
+              width: 100%;
+            }
+
+            .email-header h1 {
+              text-transform: uppercase;
+              color: #fff;
+            }
+
+            a.btn-template {
+              padding: 8px 30px;
+              border-radius: 40px;
+              color: #fff;
+              font-size: 0.8rem;
+              text-decoration: none;
+              background: #eb3249;
+              background-image: -moz-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+            p {
+              color: #666;
+              font-weight: 300;
+              font-size: 0.95rem;
+              line-height: 1.7em;
+              margin-bottom: 5px;
+              margin-top: 5px;
+            }
+
+            .email-quote {
+              background: #eb3249;
+              background-image: -moz-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+            }
+
+            .email-team-greeting {
+              background: #fafafa;
+              width: 100%;
+            }
+
+            .email-team-greeting p, .email-team-greeting a {
+              text-align: center;
+              display: block;
+            }
+
+            .email-team-greeting a {
+              font-size: 0.9rem;
+              color: #eb3249;
+              text-decoration: none;
+            }
+
+            .email-message a {
+                color: #666;
+            }
+
+            .email-message span {
+                text-decoration: underline;
+            }
+
+            .main-sections {
+              width: 100%;
+            }
+
+            .main-sections p {
+              margin: 0;
+            }
+
+            .main-sections h3 {
+              margin-top: 5px;
+              font-size: 1.1rem;
+            }
+
+            .main-sections span.dot {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: #e1e1e1;
+              border: 8px solid #f5f5f5;
+            }
+
+            .main-sections span.line {
+              display: inline-block;
+              width: 2px;
+              height: 40px;
+              background: #f5f5f5;
+              margin-top: -10px;
+            }
+
+            .main-sections tr {
+              text-align: center;
+            }
+
+            .main-sections td {
+              display: inline-block;
+            }
+
+            .main-sections img {
+              width: 60px;
+              height: 60px;
+            }
+
+            .how-it-works h2 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .divider {
+              background: #eb3249;
+              background-image: -moz-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);
+              text-align: center;
+            }
+
+            .divider a {
+              color: #fff;
+              padding: 8px 30px;
+              border-radius: 40px;
+              font-size: 0.8rem;
+              text-decoration: none;
+              border: 1px solid #fff;
+            }
+
+            .email-footer {
+              background: #f5f5f5;
+            }
+
+            .email-footer p {
+              text-align: center;
+              margin: 0;
+              line-height: 1.2rem;
+              color: #939292;
+            }
+
+            .email-footer ul.social {
+              list-style: none;
+              text-align: center;
+              padding: 0;
+              margin: 0;
+              padding-bottom: 10px;
+            }
+
+            .email-footer ul.social li {
+              width: 25px;
+              height: 25px;
+              line-height: 25px;
+              text-align: center;
+              display: inline-block;
+              padding: 0;
+            }
+
+            .email-footer ul.social li img {
+              width: 100%;
+            }
+        </style>
+        <!--[if mso]>
+            <style type=”text/css”>
+                table {
+                    font-family: Arial, sans-serif;
+                }
+            </style>
+        <![endif]-->
+</head>
+<body>
+
+        <!-- Email Contaienr -->
+        <table class="email-container" align="center" border="0" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: Arial, sans-serif;max-width: 700px;background: #fff;">
+            <tr>
+                <td>
+
+                    <!-- Email Header -->
+                    <table class="email-header" cellpadding="60px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;background-image: url(http://res.cloudinary.com/mhmd/image/upload/v1513535212/header-img_zzixgr.png);background-size: cover;">
+                        <tr>
+                            <td>
+                                <h1 style="text-transform: uppercase;color: #fff; margin: 0; padding-bottom: 20px;">Welcome to <br> Vuapaper</h1>
+                                <a href="https://vuapaper.com/order" target="_blank" class="btn-template" style="padding: 8px 30px;border-radius: 40px;color: #fff;font-size: 0.8rem;text-decoration: none;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">Order Now</a>
+                            </td>
+                        </tr>
+                    </table><!-- end Email Header -->
+
+
+                    <!-- Email message -->
+                    <table class="email-message" cellpadding="50px 30px" border="0" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;">
+                        <tr>
+                            <td>
+                                <h2 style="color: #333;margin-bottom: 0; padding-bottom: 20px;">Hi Hawaa</h2>
+                                <p style="color: #666;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;">Thank you for registering with us, you account has been set up and you can log into the client area using the following data: </p>
+
+                                <p style="color: #666;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;">Email: <span style="text-decoration: underline; color: #666">User@example.com</span></p>
+
+                                <p style="color: #666;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;">Password: <span style="text-decoration: underline; color: #666">123456789</span></p>
+                            </td>
+                        </tr>
+                    </table><!-- End Email message -->
+
+
+                    <!-- Email Quote -->
+                    <table class="email-quote" cellpadding="50px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);">
+                        <tr>
+                            <td>
+                                <p align="center" style="color: #fff;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;">We are the forefront of innovation. Find the perfect solutions for the all you academic problems with us.</p>
+                            </td>
+                        </tr>
+                    </table><!-- End Email Quote -->
+
+
+                    <!-- Main Section -->
+                    <table class="main-sections" style="padding: 70px 30px;padding-top: 0;border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;">
+                        <tr style="text-align: center;">
+                            <td style="padding: 30px 0;padding-bottom: 0;margin-bottom: -12px;display: inline-block;">
+                                <h2 style="color: #333;margin-bottom: 0; padding-bottom: 20px;">Our Main Sections</h2>
+                                <p style="color: #666;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;margin: 0;"><span class="dot" style="display: inline-block;width: 12px;height: 12px;border-radius: 50%;background: #e1e1e1;border: 8px solid #f5f5f5; margin-bottom: 30px;"></span></p>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="border: 2px solid #f5f5f5;border-bottom: 0;padding: 50px 40px;width: 250px;display: inline-block;">
+                                <img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/document_xoangk.png" alt="document" style="width: 60px;height: 60px;">
+                                <h3 style="margin-top: 5px; font-size: 1.1rem; color: #333;margin-bottom: 0; padding-bottom: 20px;">Buy Research Papers</h3>
+                                <a href="https://vuapaper.com/order" target="_blank" class="btn-template" style="padding: 8px 30px;border-radius: 40px;color: #fff;font-size: 0.8rem;text-decoration: none;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">Browse</a>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="border: 2px solid #f5f5f5;padding: 50px 40px;width: 350px;box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);z-index: 999;display: inline-block;">
+                                <img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/management_ww7658.png" alt="management" style="width: 60px;height: 60px;">
+                                <h3 style="margin-top: 5px; font-size: 1.1rem; color: #333;margin-bottom: 0; padding-bottom: 20px;">Geometric drawing and Web design & Development</h3>
+                                <a href="https://vuapaper.com/enquiry" target="_blank" class="btn-template" style="padding: 8px 30px;border-radius: 40px;color: #fff;font-size: 0.8rem;text-decoration: none;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">Browse</a>
+                            </td>
+                        </tr>
+                        <tr style="padding-bottom: 40px;text-align: center;">
+                            <td style="border: 2px solid #f5f5f5;border-top: 0;padding: 50px 40px;width: 250px;display: inline-block;">
+                                <img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/vector_jq7euq.png" alt="vector" style="width: 60px;height: 60px;">
+                                <h3 style="margin-top: 5px; font-size: 1.1rem; color: #333;margin-bottom: 0; padding-bottom: 20px;">Solve problems and assignment</h3>
+                                <a href="https://vuapaper.com/enquiry" target="_blank" class="btn-template" style="padding: 8px 30px;border-radius: 40px;color: #fff;font-size: 0.8rem;text-decoration: none;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">Browse</a>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="padding: 40px 0;display: inline-block;"></td>
+                        </tr>
+                    </table>
+                    <!-- End Main Section -->
+
+
+                    <!-- Email Team Greeting -->
+                    <table class="email-team-greeting" cellpadding="50px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;background: #fafafa;">
+                        <tr>
+                            <td>
+                                <p style="font-size: 1.2rem;color: #666;font-weight: 300;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;text-align: center;display: block;">This will be great</p>
+                                <a href="https://vuapaper.com/about" target="_blank" style="font-size: 1rem;text-align: center;display: block;color: #eb3249;text-decoration: none;">Vuapaper Team</a>
+                            </td>
+                        </tr>
+                    </table><!-- End Email Team Greeting -->
+
+
+                    <!-- How It Works -->
+                    <table class="how-it-works" cellpadding="50px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;">
+                        <tr>
+                            <td style="width: 33.333%; padding-left: 30px">
+                                <img src="http://res.cloudinary.com/mhmd/image/upload/v1513535211/illustration_rjp1xd.png" alt="illustration">
+                            </td>
+                            <td style="width: 66%; padding-left: 10px">
+                                <h2 style="margin-bottom: 10px; margin-top: 10px; color: #333;">How it works</h2>
+                                <p style="color: #666;font-weight: 300;font-size: 0.95rem;line-height: 1.7em;margin-bottom: 5px;margin-top: 5px;"><a href="https://vuapaper.com/about" target="_blank" style="color: rgb(235,50,73)">Learn how</a> to get professional academic help from us is easy.</p>
+                            </td>
+                        </tr>
+                    </table><!-- End How It Works -->
+
+
+                    <!-- Divier Table -->
+                    <table class="divider" cellpadding="50px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;background: #eb3249;background-image: -ms-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%); background-image: -webkit-linear-gradient(0deg, #fd8a06 0%, #eb3249 100%);text-align: center;">
+                        <tr>
+                            <td>
+                                <a align="center" href="https://vuapaper.com/order" target="_blank" style="color: #fff;padding: 8px 30px;border-radius: 40px;font-size: 0.8rem;text-decoration: none;border: 1px solid #fff;">Order Now</a>
+                            </td>
+                        </tr>
+                    </table><!-- End Divier Table -->
+
+
+                    <!-- Email Footer -->
+                    <table class="email-footer" cellpadding="50px 30px" style="border-collapse: collapse;border-spacing: 0;width: 100%;font-family: &quot;Libre Franklin&quot;, arial, sans-serif;background: #f5f5f5;">
+                        <tr>
+                            <td>
+                                <ul class="social" style="list-style: none;text-align: center;padding: 0;margin: 0;padding-bottom: 10px;">
+                                    <li style="width: 25px;height: 25px;line-height: 25px;text-align: center;display: inline-block;padding: 0;"><a href="https://www.facebook.com/vuapaper/" target="_blank" style="padding: 0 2px;"><img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/facebook_ho9oyb.png" alt="facebook" style="width: 100%;"></a></li>
+                                    <li style="width: 25px;height: 25px;line-height: 25px;text-align: center;display: inline-block;padding: 0;"><a href="https://twitter.com/Vuapaper" target="_blank" style="padding: 0 2px;"><img src="http://res.cloudinary.com/mhmd/image/upload/v1513543454/twitter_iv1hbp.png" alt="twitter" style="width: 100%;"></a></li>
+                                    <li style="width: 25px;height: 25px;line-height: 25px;text-align: center;display: inline-block;padding: 0;"><a href="https://www.instagram.com/Vuapaper/" target="_blank" style="padding: 0 2px;"><img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/instagram_tuyrrt.png" alt="instagram" style="width: 100%;"></a></li>
+                                    <li style="width: 25px;height: 25px;line-height: 25px;text-align: center;display: inline-block;padding: 0;"><a href="https://www.youtube.com/c/VuaPaper" target="_blank" style="padding: 0 2px;"><img src="http://res.cloudinary.com/mhmd/image/upload/v1513543453/youtube_dmbxtp.png" alt="youtube" style="width: 100%;"></a></li>
+                                </ul>
+                                <p style="color: #939292;font-weight: 300;font-size: 0.95rem;line-height: 1.2rem;margin-bottom: 5px;margin-top: 5px;text-align: center;margin: 0;">Copyright &copy; Vuapaper.com 2017</p>
+                                <p style="color: #939292;font-weight: 300;font-size: 0.95rem;line-height: 1.2rem;margin-bottom: 5px;margin-top: 5px;text-align: center;margin: 0;">All rights reserved.</p>
+                            </td>
+                        </tr>
+                    </table><!-- End Email Footer -->
+
+
+                </td>
+            </tr>
+        </table><!-- End Email Contaienr -->
+
+    </body>
+</html>

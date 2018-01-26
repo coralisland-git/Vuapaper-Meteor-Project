@@ -1,0 +1,514 @@
+/* ===============================================
+     GENERAL STYLES
+   =============================================== */
+body {
+    font-family: 'TheSans' !important;
+    font-size: 14px;
+}
+
+* {
+    font-family: 'TheSans' !important;
+}
+
+i {
+    font-family: 'FontAwesome' !important;
+}
+
+p {
+    direction: rtl !important;
+}
+
+section {
+    direction: rtl;
+}
+
+.rtl {
+    direction: rtl !important;
+}
+.ltr {
+    direction: ltr !important;
+}
+
+.font-english {
+    font-family: 'Poppins', sans-serif !important;
+}
+.light {
+    font-weight: 300 !important;
+}
+.font-arabic {
+    font-family: 'TheSans' !important;
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+label {
+    font-family: 'TheSans' !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: 'TheSans' !important;
+}
+h2 span.text-primary {
+  font-weight: 300;
+  display: block;
+  font-family: 'TheSans' !important;
+}
+
+.owl-carousel {
+    direction: ltr;
+}
+
+.text-template {
+    font-size: 1.4em;
+}
+
+.breadcrumb {
+    font-family: 'Vip Rawy';
+    font-size: 1.1em;
+}
+
+h2.has-lines {
+  display: inline-block;
+  line-height: 1;
+  transform: translateX(-20px);
+}
+
+h2.has-lines::before, h2.has-lines::after {
+  content: '';
+  width: 6px;
+  height: 100%;
+  display: inline-block;
+  background: #fd8a06;
+  background: -moz-linear-gradient(to top, #fd8a06, #eb3249);
+  background: -webkit-linear-gradient(to top, #fd8a06, #eb3249);
+  background: -o-linear-gradient(to top, #fd8a06, #eb3249);
+  background: linear-gradient(to top, #fd8a06, #eb3249);
+  position: absolute;
+  bottom: 6px;
+  right: -20px;
+}
+h2.has-lines::after {
+  width: 3px;
+  right: -12px;
+}
+
+
+.has-ellipsis {
+  display: inline-block;
+  line-height: 1;
+  transform: translateX(0);
+  padding-right: 30px;
+}
+.has-ellipsis::before {
+  content: '';
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  background: #fd8a06;
+  border: 4px solid #fec584;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+}
+
+.bootstrap-select>.dropdown-toggle{
+    padding-right: 10px !important;
+    font-family: 'TheSans' !important;
+}
+
+.bootstrap-select>.dropdown-toggle::after  {
+    margin-right: -10px;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'TheSans' !important;
+    font-size: 0.8rem;
+}
+:-moz-placeholder {
+    font-family: 'TheSans' !important;
+    font-size: 0.8rem;
+}
+::-moz-placeholder {
+    font-family: 'TheSans' !important;
+    font-size: 0.8rem;
+}
+:-ms-input-placeholder {
+    font-family: 'TheSans' !important;
+    font-size: 0.8rem;
+}
+
+/*.btn-template {
+    padding: 7px 30px 2px !important;
+}*/
+/*.btn-template-outlined {
+    padding: 7px 30px 2px !important;
+}*/
+
+.get-quote .btn-gradient {
+    font-size: 1.05em;
+}
+
+.get-quote label {
+    font-weight: bold;
+}
+
+a.btn-template i {
+    margin-left: 0 !important;
+    margin-right: 3px !important;
+}
+
+.input-material + label {
+    font-family: 'TheSans' !important;
+    left: auto;
+    right: 0;
+}
+
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 0;
+  border-color: #ddd;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serf;
+}
+.form-control:focus {
+  border-color: #fd8a06;
+}
+.form-control::-moz-placeholder {
+  color: #bbb;
+  font-style: normal;
+  text-align: right;
+  font-weight: 300;
+  font-family: "Vip Rawy", sans-serf;
+}
+.form-control::-webkit-input-placeholder {
+  color: #bbb;
+  font-style: normal;
+  text-align: right;
+  font-weight: 300;
+  font-family: "Vip Rawy", sans-serf;
+}
+.form-control:-ms-input-placeholder {
+  color: #bbb;
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Vip Rawy", sans-serf;
+}
+
+input#phone {
+    padding-right: 20px;
+}
+
+.text-template {
+    font-size: 1.25em;
+}
+
+nav.navbar a.nav-link {
+    font-size: 1.1em;
+}
+
+
+.blockquote {
+    font-size: 1.1rem;
+}
+
+/* ===============================================
+     PARTS SECTION
+   =============================================== */
+section.parts .part p {
+    font-size: 1.05em;
+}
+
+section.features .item p,
+section.services-page .item p,
+section.samples-page .item p,
+section.steps .item p,
+section.free-features .item p {
+    font-size: 1.05em;
+}
+
+/* ===============================================
+     STATISTICS SECTION
+   =============================================== */
+section.statistics p {
+    font-weight: bold;
+}
+
+
+
+/* ===============================================
+     SERVICES SECTION
+   =============================================== */
+section.services ul.features-list {
+    padding-right: 0 !important;
+}
+section.services ul.features-list li {
+    min-width: calc(50% - 10px);
+    margin-right: 0;
+}
+
+section.services .quote p {
+    font-size: 1em;
+    line-height: 2em;
+}
+
+section.services .text p {
+    font-size: 1.15em;
+}
+
+
+/* ===============================================
+     REPORT SECTION
+   =============================================== */
+@media (max-width: 992px) {
+    section.report a.btn-template {
+        float: none
+    }
+}
+
+
+/* ===============================================
+     FOOTER
+   =============================================== */
+footer.main-footer .newsletter button {
+    right: auto;
+    left: 0;
+}
+footer.main-footer .sitemap ul {
+    margin-right: 0;
+    margin-left: 40px;
+}
+
+footer.main-footer .newsletter input::-moz-placeholder {
+  font-family: "Vip Rawy", sans-serf;
+  font-style: normal;
+}
+footer.main-footer .newsletter input::-webkit-input-placeholder {
+  font-family: "Vip Rawy", sans-serf;
+  font-style: normal;
+}
+footer.main-footer .newsletter input:-ms-input-placeholder {
+  font-family: "Vip Rawy", sans-serf;
+  font-style: normal;
+}
+
+
+/* ===============================================
+    ABOUT PAGE
+   =============================================== */
+section.vision blockquote p::first-letter {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0 !important;
+}
+
+section.vision blockquote span.first-word {
+    font-size: 3.5em;
+    margin-right: 5px;
+    font-weight: 700;
+    color: #fd8a06;
+}
+
+section.vision blockquote .blockquote-footer::before {
+    display: none;
+}
+section.vision blockquote .blockquote-footer h3::after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: #fd8a06;
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 10px;
+    -webkit-transform: translateX(15px) translateY(-7px);
+    -ms-transform: translateX(15px) translateY(-7px);
+    transform: translateX(15px) translateY(-7px);
+}
+
+/* ===============================================
+     PRICES SECTION
+   =============================================== */
+section.prices-tables .number {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+section.prices-tables .table thead th {
+    font-family: 'TheSans' !important;
+    font-weight: bold !important;
+}
+
+section.prices-tables .table th {
+    font-family: 'TheSans' !important;
+}
+
+section.prices-tables .table thead th {
+    font-family: 'TheSans' !important;
+    font-weight: bold !important;
+}
+
+section.prices-tables .table td {
+    font-size: 0.95em;
+}
+
+section.prices-tables .table td:last-of-type {
+    font-family: 'TheSans' !important;
+    font-size: 1em;
+}
+
+.table thead th {
+    font-family: 'TheSans' !important;
+    font-weight: bold !important;
+}
+
+.table th {
+    font-family: 'TheSans' !important;
+}
+
+.table thead th {
+    font-family: 'TheSans' !important;
+    font-weight: bold !important;
+}
+
+
+/* ===============================================
+    TEAM SECTION
+   =============================================== */
+section.team .owl-item .profile {
+    max-height: 280px;
+}
+
+section.team .owl-item .profile img {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* ===============================================
+     BANK ACCOUNT SECTION
+   =============================================== */
+section.bank-accounts .account .card-body li span {
+    font-weight: bold;
+}
+
+section.bank-accounts .account .card-body ul {
+    padding-right: 0;
+}
+
+
+
+/* ===============================================
+     SAMPLES PAGE
+   =============================================== */
+section.samples-page .item h3 {
+    font-weight: bold;
+}
+
+section.samples-page .item .category {
+    right: auto;
+    left: -50px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-family: 'Vip Rawy';
+}
+
+section.samples-page ul.details {
+    font-family: 'Vip Rawy';
+    padding-right: 0;
+}
+
+section.samples-page .item li i {
+    text-align: center;
+}
+
+
+/* ===============================================
+     CONTACT PAGE
+   =============================================== */
+section.contact-us-details ul.info  {
+    padding-right: 0;
+    margin-bottom: 20px;
+}
+
+section.contact-us-details ul.social-icons  {
+    padding-right: 0;
+}
+
+/* ===============================================
+     FAQ PAGE
+   =============================================== */
+.questions .question-header a::before {
+    right: auto;
+    left: 20px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+.questions .question-number {
+    margin-right: 0;
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.questions .question-header a h3 {
+    font-weight: bold;
+}
+
+.questions .question-header a h3 span {
+    font-weight: 400;
+}
+
+.questions .question-block {
+    font-family: 'Vip Rawy';
+}
+
+.subject .icon {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.subject h2 {
+    font-family: 'TheSans' !important;
+    font-weight: bold !important;
+}
+
+
+
+/* ===============================================
+     ORDER PAGE
+   =============================================== */
+section.order-form ul.nav-tabs {
+    padding-right: 0;
+}
+
+
+
+/* ===============================================
+        ORDER DETAILS SECTION
+    =============================================== */
+
+section.order-details .block .title {
+    font-family: 'TheSans' !important;
+    font-size: 1.4em;
+}
+
+section.order-details .block .title {
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+section.order-details .block .title::before {
+    margin-bottom: 5px;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: auto;
+    right: 0;
+    padding: 2px;
+}

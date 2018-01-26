@@ -1,0 +1,78 @@
+
+		<template name="stafforders">
+	
+	
+					 <!--=============== Main Parts Section ===============-->
+            <section class="parts gray-bg">
+                <div class="container text-center">
+                    <header>
+                        <h2 class="has-lines">Orders</h2>
+                    </header>
+
+                    <div class="row d-flex align-items-stetch">
+                        <!-- Part -->
+                        <div class="col-lg-16">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+						
+							        <!-- My Orders -->
+                                <div class="" id="orders" >
+                                    <h3 class="underlined-gradient">Latest Orders</h3>
+
+                                    <div class="table-holder has-shadow table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ORDER ID</th>
+                                                    <th>TOPIC</th>
+                                                    <th>SUBJECT</th>
+                                                    <th>DEADLINE</th>
+                                                    <th>PAGES Number</th>
+                                                    <th>PRICE</th>
+                                                    <th>PAYMENT MODE</th>
+                                                    <th>DATE</th>
+                                                    <th>STATUS</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+											{{#each getOrders}}
+                                                <tr>
+                                                    <td>{{_id}}</td>
+                                                    <td>{{topic}}</td>
+                                                    <td>{{subject}}</td>
+                                                    <td>{{deadline}}</td>
+                                                    <td>{{pages}}</td>
+                                                    <td>{{price}}$</td>
+                                                    <td>{{payment}}</td>
+                                                    <td>{{timestamp}}</td>
+                                                    <td>{{status}}</td>
+                                                    <td>
+														<select id="{{_id}}" class="form-control status">
+															<option  value="pending">Pending</option>
+															<option  value="calncelled">Cancelled</option>
+															<option  value="delivered">Delivered</option>
+															<option  value="active">Active</option>
+													  </select>
+													</td>
+                                                </tr>
+											{{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+	
+									<br><br><br>
+			
+									<button class="btn-template" id="more" type="submit">More</button>
+				    
+								
+							</div>
+                        </div><!-- /. Part -->
+
+                    </div>
+                </div>
+            </section>
+            <!--=============== /. Main Parts Section ===============-->
+	
+
+	   </template>

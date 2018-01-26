@@ -1,0 +1,261 @@
+
+<template name="services">
+
+			<script>$(document).prop('title', 'Vuapaper | Services');</script>
+			
+            <!--=============== Hero Section ===============-->
+            <section class="hero hero-page has-pattern-stripes">
+                <div class="container text-center">
+                    <!-- Breadcrumb -->
+                    <ul class="breadcrumb d-flex justify-content-center">
+                        <li class="breadcrumb-item"><a href="/" class="animsition-link">Home</a></li>
+                        <li class="breadcrumb-item active">Services</li>
+                    </ul>
+
+                    <h1>Our Services</h1>
+                    <p class="text-template">We are the forefront in innovation. <br> Discover with us possibilities of your next project.</p>
+                </div>
+            </section>
+            <!--=============== /. Hero Section ===============-->
+
+
+            <!--=============== Services Section ===============-->
+            <section class="services-page">
+                <div class="container text-center">
+
+                    <div class="row d-flex justify-content-center">
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/writing.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Writing From Scratch</h3>
+                                <p>Get professional writers to express your ideas in their own stylish words and with their academic background.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/paper.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Academic Assistance</h3>
+                                <p>Do you need help with your essays, assignments, or projects? Get experts' assistance now!</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/notepad.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Admission Writing</h3>
+                                <p>Apply for universities, scholarships, jobs, etc. Get your application form done right away.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/translate.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Translation</h3>
+                                <p>Qualified translators will provide you with excellent, fast and context-consistent translation in various fields.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/architecture.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Geometric drawing via Auto Cad</h3>
+                                <p>Get the most efficient geometric designs by our professional engineers.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/vector.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Web Design &amp; Development</h3>
+                                <p>Upgrade your website or get a new website now with the most revolutionary designs.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/graphic-tool.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Motion Graphic</h3>
+                                <p>Present your ideas with catchy and simple yet expressive motion graphic designs.</p>
+                            </div>
+                        </div><!-- /. Item -->
+
+                        <!-- Item -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item shadow-on-hover pattern-memphis-on-hover">
+                                <div class="icon">
+                                    <img src="img/graphic-vector.gif" alt="..." class="img-fluid">
+                                </div>
+                                <h3>Graphic Design</h3>
+                                <p>Have your ideas expressed aesthetically by our finest artists' contemporary designs.</p>
+                            </div>
+                        </div><!-- /. Item -->
+                    </div>
+
+                    <!-- Call To Action -->
+                    <div class="CTAs d-flex align-items-center justify-content-center">
+                        <a href="/order" class="btn-template has-shadow animsition-link">Order Now</a>
+                        <a href="/enquiry" class="btn-template has-shadow animsition-link">Discuss Your Project</a>
+                    </div>
+                </div>
+            </section>
+            <!--=============== /. Services Section ===============-->
+
+
+
+            <!--=============== Get a Quote Modal ===============-->
+             <div class="modal fade" id="getQuote" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                      <div class="close-btn" data-dismiss="modal" aria-label="Close">
+                         <i class="icon-close"></i>
+                      </div>
+
+                      <div class="get-quote has-shadow">
+                          <div class="title">
+                              <h3 class="underlined-gradient">Get a Quote</h3>
+                          </div>
+
+                          <form action="#" id="getQuoteForm">
+                              <div class="form-group">
+                                  <div class="currency d-flex flex-wrap">
+                                      <label for="usd">
+                                          <input type="radio" name="currency" id="usd" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">USD</span>
+                                      </label>
+                                      <label for="omr">
+                                          <input type="radio" name="currency" id="omr" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">OMR</span>
+                                      </label>
+                                      <label for="sar">
+                                          <input type="radio" name="currency" id="sar" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">SAR</span>
+                                      </label>
+                                      <label for="qar">
+                                          <input type="radio" name="currency" id="qar" class="hidden" checked>
+                                          <span class="btn-gradient shadow-on-hover">QAR</span>
+                                      </label>
+                                      <label for="aed">
+                                          <input type="radio" name="currency" id="aed" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">AED</span>
+                                      </label>
+                                      <label for="kwd">
+                                          <input type="radio" name="currency" id="kwd" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">KWD</span>
+                                      </label>
+                                      <label for="bhd">
+                                          <input type="radio" name="currency" id="bhd" class="hidden">
+                                          <span class="btn-gradient shadow-on-hover">BHD</span>
+                                      </label>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="academic-level">Academic Level</label>
+                                  <select class="bs-select" id="academic-level">
+                                     <option value="Diploma">Diploma</option>
+                                     <option value="Bachelor">Bachelor</option>
+                                     <option value="Master">Master</option>
+                                     <option value="PhD">PhD</option>
+                                  </select>
+                              </div>
+                              <div class="form-group">
+                                  <label for="paper-type">Type of Paper</label>
+                                  <select class="bs-select" id="paper-type">
+                                     <option value="Article">Article</option>
+                                     <option value="Article-Review">Article Review</option>
+                                     <option value="Biography">Biography</option>
+                                     <option value="Book-Review">Book Review</option>
+                                     <option value="Business-Plan">Business Plan</option>
+                                     <option value="Case-Study">Case Study</option>
+                                     <option value="Course-Work">Course Work</option>
+                                     <option value="Cover-Letter">Cover Letter</option>
+                                     <option value="Creative-Writing">Creative Writing</option>
+                                     <option value="Curriculum-Vitae">Curriculum Vitae</option>
+                                     <option value="Dissertation">Dissertation</option>
+                                     <option value="Dissertation-Abstract">Dissertation Abstract</option>
+                                     <option value="Dissertation-Chapter">Dissertation Chapter</option>
+                                     <option value="Dissertation-Conclusion">Dissertation Conclusion</option>
+                                     <option value="Dissertation-Hypothesis">Dissertation Hypothesis</option>
+                                     <option value="Dissertation-Introduction">Dissertation Introduction</option>
+                                     <option value="Dissertation-Methodology">Dissertation Methodology</option>
+                                     <option value="Dissertation-Proposal">Dissertation Proposal</option>
+                                     <option value="Dissertation-Results">Dissertation Results</option>
+                                     <option value="Essay">Essay</option>
+                                     <option value="Literature-Review">Literature Review</option>
+                                     <option value="Movie-Review">Movie Review</option>
+                                     <option value="Report">Report</option>
+                                     <option value="Research-Paper">Research Paper</option>
+                                     <option value="Research-Proposal">Research Proposal</option>
+                                     <option value="Resume">Resume</option>
+                                     <option value="Thesis">Thesis</option>
+                                     <option value="Thesis-Proposal">Thesis Proposal</option>
+                                     <option value="Thesis-Statement">Thesis Statement</option>
+                                     <option value="Translation-Arabic-to-English">Translation Arabic to English</option>
+                                     <option value="Translation-English-t- Arabic">Translation English to Arabic</option>
+                                  </select>
+                              </div>
+                              <div class="form-group">
+                                  <label for="deadline">Deadline</label>
+                                  <select class="bs-select" id="deadline">
+                                     <option value="12 Hours">12 Hours</option>
+                                     <option value="24 Hours">24 Hours</option>
+                                     <option value="2 Days">2 Days</option>
+                                     <option value="3 Days">3 Days</option>
+                                     <option value="5 Days">5 Days</option>
+                                     <option value="7 Days">7 Days</option>
+                                     <option value="9 Days">9 Days</option>
+                                     <option value="14 Days">14 Days</option>
+                                  </select>
+                              </div>
+                              <div class="form-group pages-quantity">
+                                  <label for="pages-quantity">Pages</label>
+                                 <div class="d-flex align-items-center">
+                                     <div class="minus-btn">
+                                        <i class="icon-android-remove"></i>
+                                     </div>
+                                     <input type="text" value="1" class="quantity" id="pages-quantity">
+                                     <div class="plus-btn">
+                                        <i class="icon-android-add"></i>
+                                     </div>
+                                 </div>
+                              </div>
+
+                              <div class="d-flex align-items-center justify-content-between">
+                                  <div class="price underlined-gradient">$10.99</div>
+                                  <a href="/order" class="btn btn-template animsition-link">Continue</a>
+                              </div>
+                          </form>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             <!--=============== /. Get a Quote Modal ===============-->
+ 
+ 
+ </template>
+
+
+
+
+

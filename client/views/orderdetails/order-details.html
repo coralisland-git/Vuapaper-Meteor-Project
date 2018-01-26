@@ -1,0 +1,81 @@
+
+<template name="orderdetails">
+
+
+			<script>$(document).prop('title', 'Vuapaper | Order Details');</script>
+
+           <!--=============== Order Details ===============-->
+           <section class="order-details">
+               <div class="container">
+
+                   <h2 class="h3 heading-light underlined-gradient with-bg-text" data-text="Details">Order Details</h2>
+
+                   <div class="details">
+					
+				   {{#with getOrder}}
+				   
+                       <div class="block">
+                           <div class="title">Order ID</div>
+                           <div class="value">{{_id}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Topic</div>
+                           <div class="value">{{topic}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Subject</div>
+                           <div class="value">{{subject}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Due Date</div>
+                           <div class="value">{{deadline}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Date Purchased</div>
+                           <div class="value">{{cdate}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Pages Number</div>
+                           <div class="value">{{pages}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Price</div>
+                           <div class="value">${{price}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">Payment Mode</div>
+                           <div class="value">{{payment}}</div>
+                       </div>
+
+                       <div class="block no-border">
+                           <div class="title">Order Status</div>
+                           <div class="value">
+						   
+                               <div class="{{status}}">{{status}} 
+							   {{#if $eq status "delivered"}} <i class="fa fa-truck"></i> {{/if}}
+                               {{#if $eq status "active"}} <i class="fa fa-check"></i> {{/if}}
+                               {{#if $eq status "pending"}} <i class="fa fa-info"></i> {{/if}}
+                               {{#if $eq status "cancelleed"}} <i class="fa fa-close"></i> {{/if}}</div>
+							   
+                           </div>
+                       </div>
+					   
+					   {{/with}}
+
+                       <div class="block no-border">
+                           <a href="/profile" class="btn-template has-shadow animsition-link">Return to profile page</a>
+                       </div>
+                   </div>
+
+               </div>
+           </section>
+           <!--=============== /. Order Details ===============-->
+
+</template>

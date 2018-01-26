@@ -1,0 +1,81 @@
+
+<template name="orderdetailsar">
+
+
+			<script>$(document).prop('title', 'Vuapaper | تفاصيل الطلب');</script>
+
+ <!--=============== Order Details ===============-->
+           <section class="order-details rtl text-right">
+               <div class="container">
+
+                   <h2 class="heading-light underlined-gradient with-bg-text font-arabic" data-text="التفاصيل">تفاصيل الطلب</h2>
+
+				   
+                   <div class="details">
+				   
+				   {{#with getOrder}}
+                       <div class="block">
+                           <div class="title">السيريال</div>
+                           <div class="value">{{_id}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">الموضوع</div>
+                           <div class="value">{{topic}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">المحتوي</div>
+                           <div class="value">{{subject}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">موعد التسليم</div>
+                           <div class="value">{{deadline}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">تاريخ الطلب</div>
+                           <div class="value">{{cdate}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">عدد الصفحات</div>
+                           <div class="value">{{pages}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">السعر</div>
+                           <div class="value">${{price}}</div>
+                       </div>
+
+                       <div class="block">
+                           <div class="title">وسيلة الدفع</div>
+                           <div class="value">{{payment}}</div>
+                       </div>
+                       <div class="block no-border">
+                           <div class="title">Order Status</div>
+                           <div class="value">
+						   
+                               <div class="{{status}}">{{status}} 
+							   {{#if $eq status "delivered"}} <i class="fa fa-truck"></i> {{/if}}
+                               {{#if $eq status "active"}} <i class="fa fa-check"></i> {{/if}}
+                               {{#if $eq status "pending"}} <i class="fa fa-info"></i> {{/if}}
+                               {{#if $eq status "cancelleed"}} <i class="fa fa-close"></i> {{/if}}</div>
+							   
+                           </div>
+                       </div>
+					   
+					   {{/with}}
+					   
+                       <div class="block no-border">
+                           <a href="/profile-ar" class="btn-template has-shadow animsition-link">عودة إلي الملف الشخصي</a>
+                       </div>
+                   </div>
+
+               </div>
+           </section>
+           <!--=============== /. Order Details ===============-->
+
+
+</template>

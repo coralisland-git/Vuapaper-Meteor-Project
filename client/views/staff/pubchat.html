@@ -1,0 +1,79 @@
+
+		<template name="pubchat">
+	
+	
+					 <!--=============== Main Parts Section ===============-->
+            <section class="parts gray-bg">
+                <div class="container text-center">
+                    <header>
+                        <h2 class="has-lines">Public Live Chat</h2>
+                    </header>
+
+                    <div class="row d-flex align-items-stetch">
+                        <!-- Part -->
+                        <div class="col-lg-6">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+						
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<h3 class="panel-title text-center">
+											Active Chats</h3>
+									</div>
+									<ul class="list-group">
+										{{#each activeChats}}
+											<a href="#" id="{{cid}}" class="active-chat-btn list-group-item" style="color:{{newC}}">{{cid}}
+												{{#unless $eq notify 0}}
+													<span style="background-color:red;color:white;text-align:center;">New</span>
+												{{/unless}}
+											</a>
+										{{/each}}
+									</ul>
+								</div>		
+									
+							</div>
+                        </div><!-- /. Part -->
+
+						   <!-- Part -->
+                        <div class="col-lg-6">
+                            <div class="part shadow-on-hover pattern-memphis-on-hover">
+						
+						<div id="msg-cont" class="panel panel-info" style="background-color:transparent;position:relative;height:50em;overflow: hidden;overflow-y: scroll;">
+					
+						
+						{{#each messages}}
+							{{#if $eq type 1 }}
+							
+								<div class="talk-bubble tri-right  round btm-left-in">
+								  <div class="talktext">
+									<p style="color:black;font-size:20px;word-wrap: break-word;">{{{text}}}</p>
+								  </div>
+								</div><br/>
+							{{else}}
+								<div class="talk-bubble tri-left round bubble-right btm-right-in">
+								  <div class="talktext">
+									<p style="color:black;font-size:20px;word-wrap: break-word;">{{{text}}}</p>
+								  </div>
+								</div><br/>
+							{{/if}}
+						{{/each}}
+						
+					  <form class="chat-form" style="">
+							<textarea style="width:100%;" id="text-input" name="message"></textarea>
+							<br/>
+							<input class="btn btn-info" type="submit" value="Send"/>
+						</form>
+				</div>
+						
+								
+							</div>
+                        </div><!-- /. Part -->
+						
+						
+                    </div>
+                </div>
+            </section>
+            <!--=============== /. Main Parts Section ===============-->
+
+
+
+	   </template>

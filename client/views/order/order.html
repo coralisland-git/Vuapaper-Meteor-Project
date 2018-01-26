@@ -1,0 +1,473 @@
+	
+		<template name="order">
+	
+	
+			<script>$(document).prop('title', 'Vuapaper | Order');</script>
+	
+           <!--=============== Order Steps ===============-->
+           <section class="order-form has-pattern-stripes gray-bg">
+               <div class="container">
+
+                   <div class="form-holder card col-md-10 push-md-1 no-padding">
+
+                        <!-- Steps Header -->
+                       <div class="steps-header d-flex card-header" >
+                           <div class="step paper-details text-center active is-showing" id="paper-details-step">1. Paper Details</div>
+                           <div class="step price-calculation text-center" id="price-calculation-step">2. Price Calcuation</div>
+                           <div class="step personal-information text-center" id="personal-information-step">3. Personal Information</div>
+                       </div>
+
+                        <!-- Step Body [Paper Details Step] -->
+                       <div class="paper-details-step step-body is-showing" id="paper-details-step-content">
+                           <form action="#" id="order-paper-details-form">
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Academic level <span data-toggle="tooltip" data-placement="right" title="Please select the option that is the closest to your next obtainable degree."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="academic-level d-flex flex-wrap col-lg-9">
+                                       <label for="0">
+                                           <input type="radio" name="academic-level" id="0" class="hidden" checked>
+                                           <span class="btn-gradient shadow-on-hover">Diploma</span>
+                                       </label>
+                                       <label for="1">
+                                           <input type="radio" name="academic-level" id="1" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">Bachelor</span>
+                                       </label>
+                                       <label for="2">
+                                           <input type="radio" name="academic-level" id="2" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">Master</span>
+                                       </label>
+                                       <label for="3">
+                                           <input type="radio" name="academic-level" id="3" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">PhD</span>
+                                       </label>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Type of Paper <span data-toggle="tooltip" data-placement="right" title="Please select the option that is the closest to your next obtainable degree."> <i class="fa fa-info"></i></span></label>
+                                   <div class="col-lg-9">
+                                       <select class="bs-select" id="order-paper-type">
+                                          <option value="Article">Article</option>
+                                          <option value="Article-Review">Article Review</option>
+                                          <option value="Biography">Biography</option>
+                                          <option value="Book-Review">Book Review</option>
+                                          <option value="Business-Plan">Business Plan</option>
+                                          <option value="Case-Study">Case Study</option>
+                                          <option value="Course-Work">Course Work</option>
+                                          <option value="Cover-Letter">Cover Letter</option>
+                                          <option value="Creative-Writing">Creative Writing</option>
+                                          <option value="Curriculum-Vitae">Curriculum Vitae</option>
+                                          <option value="Dissertation">Dissertation</option>
+                                          <option value="Dissertation-Abstract">Dissertation Abstract</option>
+                                          <option value="Dissertation-Chapter">Dissertation Chapter</option>
+                                          <option value="Dissertation-Conclusion">Dissertation Conclusion</option>
+                                          <option value="Dissertation-Hypothesis">Dissertation Hypothesis</option>
+                                          <option value="Dissertation-Introduction">Dissertation Introduction</option>
+                                          <option value="Dissertation-Methodology">Dissertation Methodology</option>
+                                          <option value="Dissertation-Proposal">Dissertation Proposal</option>
+                                          <option value="Dissertation-Results">Dissertation Results</option>
+                                          <option value="Essay">Essay</option>
+                                          <option value="Literature-Review">Literature Review</option>
+                                          <option value="Movie-Review">Movie Review</option>
+                                          <option value="Report">Report</option>
+                                          <option value="Research-Paper">Research Paper</option>
+                                          <option value="Research-Proposal">Research Proposal</option>
+                                          <option value="Resume">Resume</option>
+                                          <option value="Thesis">Thesis</option>
+                                          <option value="Thesis-Proposal">Thesis Proposal</option>
+                                          <option value="Thesis-Statement">Thesis Statement</option>
+                                          <option value="Translation-Arabic-to-English">Translation Arabic to English</option>
+                                          <option value="Translation-English-t- Arabic">Translation English to Arabic</option>
+                                       </select>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Subject or dicipline <span data-toggle="tooltip" data-placement="right" title="If the required subject is missing, feel free to pick “Other” and write your specific subject in the appeared tab."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="col-lg-9">
+                                       <select class="bs-select" id="order-subject">
+                                          <option value="Accounting">Accounting</option>
+                                          <option value="Chemistry">Chemistry</option>
+                                          <option value="Classic English Literature">Classic English Literature</option>
+                                          <option value="Criminal law">Criminal law</option>
+                                          <option value="Ecology">Ecology</option>
+                                          <option value="Computer science">Computer science</option>
+                                          <option value="Education">Education</option>
+                                          <option value="Engineering">Engineering</option>
+                                          <option value="Family and consumer science">Family and consumer science</option>
+                                          <option value="Finance">Finance</option>
+                                          <option value="Geography">Geography</option>
+                                          <option value="History">History</option>
+                                          <option value="Law">Law</option>
+                                          <option value="Leadership Studies">Leadership Studies</option>
+                                          <option value="Literature">Literature</option>
+                                          <option value="Management">Management</option>
+                                          <option value="Marketing">Marketing</option>
+                                          <option value="Mathematics">Mathematics</option>
+                                          <option value="Medicine">Medicine</option>
+                                          <option value="Music">Music</option>
+                                          <option value="Nursing">Nursing</option>
+                                          <option value="Other">Other</option>
+                                          <option value="Philosophy">Philosophy</option>
+                                          <option value="Physics">Physics</option>
+                                          <option value="Poetry">Poetry</option>
+                                          <option value="Political science">Political science</option>
+                                          <option value="Psychology">Psychology</option>
+                                          <option value="Religious studies">Religious studies</option>
+                                          <option value="Social Work and Human Services">Social Work and Human Services</option>
+                                          <option value="Sociology">Sociology</option>
+                                          <option value="Sports">Sports</option>
+                                          <option value="Statistics">Statistics</option>
+                                          <option value="Technology">Technology</option>
+                                          <option value="Tourism">Tourism</option>
+                                          <option value="Women's and gender studies">Women's and gender studies</option>
+                                       </select>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Topic <span data-toggle="tooltip" data-placement="right" title="Please provide us with a clear topic of your assignment (up to 300 symbols). If you don’t have a specific topic, use the default writer’s choice option."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="col-lg-9">
+                                       <input type="text" id="topic" name="topic" class="form-control" placeholder="Writer's Choice">
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Paper Instructions <span data-toggle="tooltip" data-placement="right" title="To ensure that the final paper meets your requirements,make sure your instructions are as clear and detailed as possible. This will decrease the chance of revisions in your order."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="col-lg-9">
+                                       <textarea id="instructions" name="paper-instructions" class="form-control" placeholder="Optional Field"></textarea>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                                <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-center">
+                                   <label class="col-lg-3 text-right">Source  <span data-toggle="tooltip" data-placement="right" title="This number of entries will be in your reference list or bibliography page."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="pages-quantity col-lg-9 d-flex align-items-center">
+                                      <div class="d-flex align-items-center">
+                                          <div class="minus-btn ssbtn">
+                                             <i class="icon-android-remove"></i>
+                                          </div>
+                                          <input type="text" value="1" class="quantity" id="order-source-quantity">
+                                          <div class="plus-btn ssbtn">
+                                             <i class="icon-android-add"></i>
+                                          </div>
+                                      </div>
+                                      <small>Please specify the number of sources to be used, if required.</small>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-center">
+                                   <label class="col-lg-3 text-right">Additional Materials  <span data-toggle="tooltip" data-placement="right" title="You can upload books, articles, images, instructions from your professor or anything that can help us complete the assignment."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="col-lg-9">
+                                       <input type="file" name="files" id="file" class="input-file hidden-xl-down" data-multiple-caption="{count} files selected" multiple>
+                                       <label for="file" class="btn-gradient"><span>Upload Files</span></label>
+                                   </div>
+                               </div><!-- /. Form Group -->
+
+                               <!-- Form Group -->
+                               <div class="form-group row d-flex align-items-start">
+                                   <label class="col-lg-3 text-right">Page Format <span data-toggle="tooltip" data-placement="right" title="Format of your in-text citations, references and title page."> <i class="fa fa-info"></i></span></label>
+
+                                   <div class="Page Format d-flex flex-wrap col-lg-9">
+                                       <label for="mla">
+                                           <input type="radio" name="page-format" id="mla" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">MLA</span>
+                                       </label>
+                                       <label for="apa">
+                                           <input type="radio" name="page-format" id="apa" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">APA</span>
+                                       </label>
+                                       <label for="chicago">
+                                           <input type="radio" name="page-format" id="chicago" class="hidden" checked>
+                                           <span class="btn-gradient shadow-on-hover">Chicago/Turabian</span>
+                                       </label>
+                                       <label for="harvard">
+                                           <input type="radio" name="page-format" id="harvard" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">Harvard</span>
+                                       </label>
+                                       <label for="not-applicable">
+                                           <input type="radio" name="page-format" id="not-applicable" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">Not applicable</span>
+                                       </label>
+                                       <label for="other">
+                                           <input type="radio" name="page-format" id="other" class="hidden">
+                                           <span class="btn-gradient shadow-on-hover">Other</span>
+                                       </label>
+                                   </div>
+                               </div><!-- /.Form Group -->
+                           </form>
+
+                            <!-- Steps Navigation -->
+                           <div class="step-nav clearfix">
+                               <a href="#" id="next1" class="btn-template-outlined next pull-right">Proceed to Price Calculation <i class="fa fa-long-arrow-right"></i></a>
+                           </div>
+                       </div><!-- /. Step Body [Paper Details Step] -->
+
+
+                        <!-- Step Body [Price Calculation Step] -->
+                        <div class="price-calculation-step step-body" id="price-calculation-step-content">
+                            <form action="#" id="order-price-calculations-form">
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-start">
+                                    <label class="col-lg-3 text-right">Number of Pages <span data-toggle="tooltip" data-placement="right" title="Select the number of pages needed excluding the title page and the reference page. Double spaced pages contain approximately 275 words each, while single-spaced have 550."> <i class="fa fa-info"></i></span></label>
+
+                                    <div class="pages-quantity col-lg-9 d-flex align-items-start">
+                                       <div class="d-flex align-items-center">
+                                           <div class="minus-btn pbtn">
+                                              <i class="icon-android-remove"></i>
+                                           </div>
+                                           <input type="text" value="1" class="quantity" id="order-pages-quantity">
+                                           <div class="plus-btn pbtn">
+                                              <i class="icon-android-add"></i>
+                                           </div>
+                                       </div>
+                                       <div class="spaced-type d-flex flex-wrap">
+                                           <label for="double-spaced">
+                                               <input type="radio" name="spaced-type" id="double-spaced" class="hidden" checked>
+                                               <span class="btn-gradient shadow-on-hover">Double spaced</span>
+                                           </label>
+                                           <label for="single-spaced">
+                                               <input type="radio" name="spaced-type" id="single-spaced" class="hidden">
+                                               <span class="btn-gradient shadow-on-hover">Single spaced</span>
+                                           </label>
+                                       </div>
+                                    </div>
+                                </div><!-- Form Group -->
+
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-start">
+                                    <label class="col-lg-3 text-right">Final deadline <span data-toggle="tooltip" data-placement="right" title="The time in which you will receive your completed paper. The countdown starts when we receive payment for your order. Please note that revision requests may exceed your deadline."> <i class="fa fa-info"></i></span></label>
+
+                                    <div class="col-lg-9">
+                                        <div class="final-dealine d-flex flex-wrap">
+										
+											{{#each getItems}}
+											
+                                            <label for="{{_id}}">
+                                                <input type="radio" name="final-deadline" id="{{_id}}" class="hidden">
+                                                <span class="btn-gradient shadow-on-hover">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}}</span>
+                                            </label>
+											
+											{{/each}}
+											
+                                        </div>
+                                       <!-- <small class="no-margin">We estimate that your Final Submission Deadline is approximately <span class="text-primary">29 Aug 12 PM (GMT +2)</span></small> -->
+                                    </div>
+                                </div><!-- Form Group -->
+
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-start">
+                                    <label class="col-lg-3 text-right">Category of writer: <span data-toggle="tooltip" data-placement="right" title="Best available writer – any writer who is available for your assignment at the moment. Advanced writer – writer who has experience specifically in the field of your assignment and only positive feedbacks from our customers. ENL (English Native Language) – an addition to the advanced category, guaranteeing a specialist from a native English speaking country)"> <i class="fa fa-info"></i></span></label>
+
+                                    <div class="col-lg-9">
+                                        <div class="final-dealine d-flex flex-wrap">
+                                            <label for="best-available">
+                                                <input type="radio" name="writer-category" id="best-available" class="hidden" checked>
+                                                <span class="btn-gradient shadow-on-hover">Best available</span>
+                                            </label>
+                                            <label for="advanced">
+                                                <input type="radio" name="writer-category" id="advanced" class="hidden">
+                                                <span class="btn-gradient shadow-on-hover">Advanced</span>
+                                            </label>
+                                            <label for="enl">
+                                                <input type="radio" name="writer-category" id="enl" class="hidden">
+                                                <span class="btn-gradient shadow-on-hover">ENL</span>
+                                            </label>
+                                            <label for="preferred-writer">
+                                                <input type="radio" name="writer-category" id="preferred-writer" class="hidden">
+                                                <span class="btn-gradient shadow-on-hover">Preferred writer</span>
+                                            </label>
+                                        </div>
+                                        <small class="no-margin">Mind that no particular level of writing quality may be guaranteed (if the high quality writers are busy, your order may go to the best writer available at the moment). Those who seek only high writing quality results, may choose "ENL" or "Advanced writer" options.</small>
+                                    </div>
+                                </div><!-- Form Group -->
+
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-center">
+                                    <label class="col-lg-3 text-right">PowerPoint Slides  <span data-toggle="tooltip" data-placement="right" title="The number of Power Point slides that will be delivered to you separately from your paper. Useful for those who need to present in front of class."> <i class="fa fa-info"></i></span></label>
+
+                                    <div class="pages-quantity col-lg-9 d-flex align-items-center">
+                                       <div class="d-flex align-items-center">
+                                           <div class="minus-btn slbtn">
+                                              <i class="icon-android-remove"></i>
+                                           </div>
+                                           <input type="text" value="1" class="quantity" id="order-powerpoint-slides">
+                                           <div class="plus-btn slbtn">
+                                              <i class="icon-android-add"></i>
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div><!-- Form Group -->
+
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-start">
+                                    <label class="col-lg-3 text-right">Additional Service <span data-toggle="tooltip" data-placement="right" title="Most requested services from our clients."> <i class="fa fa-info"></i></span></label>
+
+                                    <div class="col-lg-9 d-flex flex-wrap">
+                                        <div class="additionl-service d-flex align-items-start">
+                                            <input type="checkbox" name="vip-support" id="vip-support" class="checkbox-template">
+                                            <label class="text" for="vip-support">
+                                                <strong>VIP Support</strong>
+                                                <span class="text-primary">$9.90</span>
+                                            </label>
+                                        </div>
+                                        <div class="additionl-service d-flex align-items-start">
+                                            <input type="checkbox" name="best-writer" id="best-writer" class="checkbox-template">
+                                            <label class="text" for="best-writer">
+                                                <strong>Best Writer</strong>
+                                                <span class="text-primary">$9.90</span>
+                                            </label>
+                                        </div>
+                                        <div class="additionl-service d-flex align-items-start">
+                                            <input type="checkbox" name="print-quest" id="print-quest" class="checkbox-template">
+                                            <label class="text" for="print-quest" title="This option available only for master students from Oman">
+                                                <strong>Print Questionnaires</strong>
+                                                <span class="text-primary">$49.9</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div><!-- Form Group -->
+
+                                <!-- Total Price -->
+                                <div class="d-flex justify-content-center">
+                                    <div class="total-price has-shadow">Order Total <span class="text-secondary">${{getPrice}}</span></div>
+                                </div><!-- /. Total Price -->
+                            </form>
+
+                            <!-- Steps Navigation -->
+                            <div class="step-nav d-flex justify-content-between flex-column flex-lg-row">
+                                <a href="#" class="prev"><i class="fa fa-long-arrow-left"></i> Back to <span>Paper Details</span></a>
+                                <a href="#" class="btn-template-outlined next">Proceed to Personal Information <i class="fa fa-long-arrow-right"></i></a>
+                            </div><!-- /. Steps Navigation -->
+                        </div>
+
+
+                        <!-- Step Body [Personal Information Step] -->
+                        <div class="personal-information-step step-body" id="personal-information-step-content">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label class="no-margin">Your order summary</label>
+                                <small class="no-margin">Please review your order details below.</small>
+                                <div class="order-summary row">
+								
+								{{#with getDetails}}
+                                    <ul class="list-unstyled col-lg-6">
+                                        <li>Academic level: <span>{{academic}}</span></li>
+                                        <li>Type of paper: <span>{{type}}</span></li>
+                                        <li>Subject or discipline: <span>{{subject}}</span></li>
+                                        <li>Topic: <span>{{topic}}</span></li>
+                                        <li>Sources: <span>{{source}}</span></li>
+                                    </ul>
+                                    <ul class="list-unstyled col-lg-6">
+                                        <li>Pages: <span>{{pages}}</span></li>
+                                        <li>Spacing: <span>{{spaced}}</span></li>
+                                        <li>Category of writer: <span>{{category}}</span></li>
+                                        <li>Power Point slides: <span>{{slides}}</span></li>
+                                        <li>Paper format: <span>{{format}}</span></li>
+                                    </ul>
+								{{/with}}
+
+									
+									
+                                </div>
+                            </div><!-- Form Group -->
+
+                            <!-- Form Group [TABS] -->
+                            <div class="form-group">
+                                <label class="no-margin">Personal Information</label>
+                                <small class="no-margin">Please insert your personal information in the fields below and pass on to check out. Further on you will be redirected to PayPal.</small>
+
+										{{#unless currentUser}}
+										
+											<div class="step-nav" style="text-align:center">
+												<a href="/login" target="_blank" align="center" class="btn-template-outlined ">Login to proceed order </a>		
+												<a href="/signup" target="_blank" align="center" class="btn-template-outlined ">Register new account </a>
+											</div>
+											
+										{{/unless}}
+								
+								
+                                <!-- Tabs header -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="list-unstyled">
+                                       {{#if currentUser}}
+											You are proceeding order as <span style="color:red">{{#with getUser}}{{#with profile }}{{name}}{{/with}}{{/with}}</span>
+										{{/if}}
+										
+										
+                                    </li>
+                                </ul>
+								
+								<br>
+
+
+
+                                <!-- Form Group -->
+                                <div class="form-group row d-flex align-items-start">
+                                    <label class="col-lg-3 text-left">Payment System</label>
+                                    <div class="payment-system col-lg-9 d-flex align-items-center flex-wrap">
+                                        <label for="paypal">
+                                            <input type="radio" name="payment-system" id="paypal" class="hidden" checked>
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/paypal.svg" alt="paypal" width="70">
+                                            </span>
+                                        </label>
+                                        <label for="visa">
+                                            <input type="radio" name="payment-system" id="visa" class="hidden">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/visa.svg" alt="visa" width="50">
+                                            </span>
+                                        </label>
+										 <label for="master">
+                                            <input type="radio" name="payment-system" id="master" class="hidden">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/mastercard.svg" alt="master" width="50">
+                                            </span>
+                                        </label>
+                                        <label for="western-union">
+                                            <input type="radio" name="payment-system" id="western-union" class="hidden">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover" data-toggle="tooltip" data-placement="top" title="Upload your payment receipt.">
+                                                <img src="img/western-union.svg" alt="western-union" width="50">
+                                            </span>
+                                        </label>
+                                        <label for="bank-muskat">
+                                            <input type="radio" name="payment-system" id="bank-muskat" class="hidden">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover" data-toggle="tooltip" data-placement="top" title="Upload your payment receipt.">
+                                                <img src="img/bankmuscat.svg" alt="bank muskat" width="90">
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div><!-- Form Group -->
+								
+
+                                <!-- Total Price -->
+                                <div class="d-flex justify-content-center">
+                                    <div class="total-price has-shadow">Order Total <span class="text-secondary">${{getPrice}}</span></div>
+                                </div><!-- /. Total Price -->
+                            </div>
+
+                            <!-- Steps navigation -->
+                            <div class="step-nav d-flex justify-content-between flex-column flex-lg-row">
+                                <a href="#" class="prev"><i class="fa fa-long-arrow-left"></i> Back to <span>Price Calculation</span></a>
+                                <a href="#" id="save" class="btn-template-outlined next">Proceed to checkout <i class="fa fa-long-arrow-right"></i></a>
+                            </div><!-- /. Steps navigation -->
+                        </div>
+                   </div>
+               </div>
+           </section>
+           <!--=============== /. Order Steps ===============-->
+
+
+
+		</template>

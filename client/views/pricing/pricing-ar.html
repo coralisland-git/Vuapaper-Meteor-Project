@@ -1,0 +1,351 @@
+
+<template name="pricingar">
+
+			<script>$(document).prop('title', 'Vuapaper | دليل الأسعار');</script>
+
+        <!--=============== Hero Section ===============-->
+        <section class="hero hero-page has-pattern-stripes">
+            <div class="container text-center">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb d-flex justify-content-center">
+                    <li class="breadcrumb-item"><a href="/ar" class="animsition-link">الرئيسية</a></li>
+                    <li class="breadcrumb-item active">دليل الأسعار</li>
+                </ul>
+
+                <h1>دليل الأسعار</h1>
+                <p class="text-template">لقد قمنا بتوضيح الأسعار بجميع العملات العربية جنباً إلى جنب مع الدولار في صفحة واحدة لتسهيل الأمور عليك.</p>
+            </div>
+        </section>
+        <!--=============== /. Hero Section ===============-->
+
+
+        <!--=============== Prices Dependency Section ===============-->
+        <section class="dependency">
+            <div class="container text-center">
+                <header>
+                    <h2>يتم تحديد السعر وفقاً لـ</h2>
+                </header>
+
+                <div class="row">
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/e-learning.gif" alt="..." width="50">
+                        </div>
+                        <h4>الدرجة الأكاديمية</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/report.gif" alt="..." width="50">
+                        </div>
+                        <h4>عدد الصفحات</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/sand-clock.gif" alt="" width="50">
+                        </div>
+                        <h4>الطلبات المستعجلة</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/order.gif" alt="" width="50">
+                        </div>
+                        <h4>نوع الورقة المطلوبة</h4>
+                    </div><!-- /. Item -->
+                </div>
+            </div>
+        </section>
+        <!--=============== /. Prices Dependency Section ===============-->
+
+
+        <!--=============== Tables Section ===============-->
+        <section class="prices-tables no-padding">
+
+            <div class="level diploma">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">1</strong>
+                        <h2>
+                            <span>الدرجة الأكاديمية</span>
+                            دبلوم
+                        </h2>
+                    </header>
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>وقت التسليم</th>
+                                    <th>دولار أمريكي</th>
+                                    <th>ريال عماني</th>
+                                    <th>ريال سعودي</th>
+                                    <th>ريال قطري</th>
+                                    <th>درهم إماراتي</th>
+                                    <th>دينار كويتي</th>
+                                    <th>دينار بحريني</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each getDiplomas}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} أيام {{/if}} {{#if $eq deadlineunit "1"}} ساعة {{/if}}</th>
+									 <td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level bachelor">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">2</strong>
+                        <h2>
+                            <span>الدرجة الأكاديمية</span>
+                            بكالوريوس
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>وقت التسليم</th>
+                                    <th>دولار أمريكي</th>
+                                    <th>ريال عماني</th>
+                                    <th>ريال سعودي</th>
+                                    <th>ريال قطري</th>
+                                    <th>درهم إماراتي</th>
+                                    <th>دينار كويتي</th>
+                                    <th>دينار بحريني</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each getBachelors}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} أيام {{/if}} {{#if $eq deadlineunit "1"}} ساعة {{/if}}</th>
+									 <td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level mater">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">3</strong>
+                        <h2>
+                            <span>الدرجة الأكاديمية</span>
+                            ماجستير
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>وقت التسليم</th>
+                                    <th>دولار أمريكي</th>
+                                    <th>ريال عماني</th>
+                                    <th>ريال سعودي</th>
+                                    <th>ريال قطري</th>
+                                    <th>درهم إماراتي</th>
+                                    <th>دينار كويتي</th>
+                                    <th>دينار بحريني</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               {{#each getMasters}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} أيام {{/if}} {{#if $eq deadlineunit "1"}} ساعة {{/if}}</th>
+									 <td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level phd">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">4</strong>
+                        <h2>
+                            <span>الدرجة الأكاديمية</span>
+                            دكتوراه
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>وقت التسليم</th>
+                                    <th>دولار أمريكي</th>
+                                    <th>ريال عماني</th>
+                                    <th>ريال سعودي</th>
+                                    <th>ريال قطري</th>
+                                    <th>درهم إماراتي</th>
+                                    <th>دينار كويتي</th>
+                                    <th>دينار بحريني</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {{#each getPhDs}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} أيام {{/if}} {{#if $eq deadlineunit "1"}} ساعة {{/if}}</th>
+									 <td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=============== /. Tables Section ===============-->
+
+
+
+        <!--=============== Bank Accounts Section ===============-->
+        <section class="bank-accounts padding-small gray-bg ltr">
+            <div class="container">
+
+                <header class="text-center">
+                    <h2>حساباتنا البنكية</h2>
+                    <p class="text-template col-md-8 push-md-2">طريقة الدفع لم تعد مشكلة، فقد وفرنا العديد من طرق الدفع لضمان عدم وقوف هذه المشكلة كعائق أمام تحقيق أحلامك وتنفيذ مشروعك.</p>
+                </header>
+
+                <div class="row align-items-stretch justify-content-center">
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/visa.svg" alt="Visa" class="visa img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li class="font-arabic"><span>الاسم:</span> ماجد خميس سليمان</li>
+                                    <li><span class="font-arabic">رقم الهاتف:</span> 0096895444316</li>
+                                    <li><span class="font-arabic">رقم الحساب:</span> 0440006588830028</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/mastercard.svg" alt="Mastercard" class="mastercard img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li class="font-arabic"><span>الاسم:</span> Vua Paper</li>
+                                    <li><span class="font-arabic">رقم الهاتف:</span> 0096895444316</li>
+                                    <li class="font-arabic"><span>رقم الحساب:</span> 5594070000646783</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/western-union.svg" alt="Western Union" class="western-union img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li class="font-arabic"><span>الاسم:</span> أمير أحمد عبدالله الرحبي</li>
+                                    <li><span class="font-arabic">رقم الهاتف:</span> 0096895444316</li>
+                                    <li class="font-arabic"><span>الفرع:</span> مسقط – الخوير</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/paypal.svg" alt="Paypal" class="paypal img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li class="font-english"><span class="font-arabic">الاسم:</span> Paypal</li>
+                                    <li class="font-arabic"><span>الحالة:</span> متاح</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/bankmuscat.svg" alt="Bank Muscat" class="bank-muskat img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li class="font-arabic"><span>الاسم:</span> ماجد خميس سليمان</li>
+                                    <li><span class="font-arabic">رقم الهاتف:</span> 0096895444316</li>
+                                    <li><span class="font-arabic">رقم الحساب:</span> 0440006588830028</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+                </div>
+            </div>
+        </section>
+
+        <!--=============== /. Bank Accounts Section ===============-->
+
+
+  </template>

@@ -1,0 +1,227 @@
+<head>
+    <meta charset="utf-8">
+    <!-- Responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IE Compatibility meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Description meta -->
+    <meta name="description" content="...">
+    <!-- Author meta -->
+    <meta name="author" content="...">
+    <!-- Page Title -->
+    <title>Vuapaper | نحن رواد الإبتكار</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Font Icons Stylesheet -->
+    <link rel="stylesheet" href="https://file.myfontastic.com/VzbhHsppHvzSAY9cDQTJaW/icons.css">
+    <!-- Arabic Font -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/mhmdhasan/TheSans/master/font.css">
+</head>
+<template name="layoutar">
+    <main class='main' style="overflow:hidden;">
+    <!--=============== Navbar ===============-->
+    <nav class="navbar fixed-top navbar-toggleable-lg">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Navbar Brand -->
+                <a href="/" class="navbar-brand">
+                    <img src="img/logo-main.svg" alt="Vuapaper" width="140">
+                </a>
+                <!-- Toggle Button -->
+                <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+                <!-- Navbar Menu -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/ar" class="nav-link animsition-link active">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/aboutar" class="nav-link animsition-link">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/servicesar" class="nav-link animsition-link">خدماتنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pricingar" class="nav-link animsition-link">الأسعار</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/samplesar" class="nav-link animsition-link">أعمالنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contactar" class="nav-link animsition-link">تواصل معنا</a>
+                    </li>
+                    {{#unless currentUser }}
+                    <li class="nav-item">
+                        <a href="/loginar" class="nav-link animsition-link">الدخول</a>
+                    </li>
+                    {{/unless}}
+                    <li class="nav-item d-flex align-items-center">
+                        <a href="#" class="langs font-english">
+                            <span id="en">EN</span>
+                            <span class="active">AR</span>
+                        </a>
+                        <a href="/enquiryar" class="btn btn-template animsition-link wide-vertical">ناقشنا بمشروعك</a>
+                    </li>
+                </ul>
+                {{#if currentUser }}
+                <!-- Dropdown menu -->
+                <div class="dropdown user-dropdown">
+                    <a class="btn dropdown-toggle" href="#" id="userdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{#with currentUser}}
+                        <div class="d-flex align-items-center">
+                            <div class="avatar">
+                                <img src="{{getUserPhoto}}" alt="..." class="img-fluid">
+                            </div>
+                            <span class="name">أهلا
+                                {{#with profile}}
+                                {{name}}
+                                {{/with}}
+                            </span>
+                        </div>
+                        {{/with}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userdropdown">
+                        <a class="dropdown-item" href="/profilear">الصفحة الشخصية</a>
+                        <a class="dropdown-item" id="logout">تسجيل الخروج</a>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </nav><!--=============== /. Navbar ===============-->
+    <div id="notify-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-success">
+        <strong>Success!</strong>  <span id="notify"></span>
+    </div>
+    <div id="notifyErr-bar" style="display:none;position:fixed;bottom:0%;z-index:999;width:100%" class="alert alert-danger">
+        <strong>Note!</strong>  <span id="notifyErr"></span>
+    </div>
+    {{> Template.dynamic template=main}}
+    <!--=============== Footer ===============-->
+    <footer class="main-footer rtl">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & Information Column -->
+                <div class="info col-md-4">
+                    <div class="logo">
+                        <img src="img/logo-white.svg" alt="Vuapaper" width="150">
+                    </div>
+                    <p>من اليوم .. أصبح حل مشاكل الكتابة الأكاديمية ممكناً! نحن نقوم بكتابة كل أنواع المحتويات والأوراق بمختلف مواضيعها من الصفر.</p>
+                    <ul class="info list-unstyled no-padding-right">
+                        <li>
+                            <p>
+                            <i class="icon-location-pin"></i>
+                            مسقط، عمان
+                            </p>
+                        </li>
+                        <li>
+                            <i class="icon-mail"></i>
+                            <a href="Support@vuapaper.com" class="font-english">Support@vuapaper.com</a>
+                        </li>
+                        <li>
+                            <i class="icon-phone-call"></i>
+                            <a href="tel:+96895444315" class="font-english ltr">+968 95444316</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Site Map Column -->
+                <div class="sitemap col-md-4">
+                    <h3 class="text-primary">خريطة الموقع</h3>
+                    <div class="d-flex">
+                        <ul class="links list-unstyled no-padding-right">
+                            <li><a href="/ar" class="animsition-link">الرئيسية</a></li>
+                            <li><a href="/pricingar" class="animsition-link">دليل الأسعار</a></li>
+                            <li><a href="/samplesar" class="animsition-link">نماذج</a></li>
+                            <li><a href="/aboutar" class="animsition-link">من نحن</a></li>
+                        </ul>
+                        <ul class="links list-unstyled no-padding-right">
+                            <li><a href="/howar" class="animsition-link">آلية العمل</a></li>
+                            <li><a href="/servicesar" class="animsition-link">الخدمات</a></li>
+                            <li><a href="/faqar" class="animsition-link">الأسئلة الشائعة</a></li>
+                            <li><a href="/contactar" class="animsition-link">تواصل معنا</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Newsletter Column -->
+                <div class="newsletter col-md-4">
+                    <h3 class="text-primary">النشرة البريدية</h3>
+                    <p>إشترك معنا ليصلك كل جديد من أخبار وعروض خاصة.</p>
+                    <form action="#" id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" name="subscriber" id="newsletter" placeholder="قم بإدخال بريدك الإلكتروني">
+                            <button type="submit" class="font-arabic">أشترك الأن</button>
+                        </div>
+                    </form>
+                    <ul class="social-icons list-inline no-padding-right">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/vuapaper/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/Vuapaper" target="_blank"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/Vuapaper/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/c/VuaPaper" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyrights -->
+        <div class="copyrights ltr">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="font-english ltr">&copy; Copyrights <a href="/ar" class="animsition-link font-english">VuaPaper.com</a> 2017. <span class="font-arabic"> جميع الحقوق محفوظة</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=============== /. Footer ===============-->
+    <!--=============== Scroll To Top ===============-->
+    <div id="scrollTop">
+        <div class="d-flex align-items-center justify-content-end">
+            <i class="fa fa-long-arrow-up"></i>
+            <span>To Top</span>
+        </div>
+    </div>
+    <!--=============== /. Scroll To Top ===============-->
+    </main>
+    <script type="text/javascript">
+jQuery(function(){
+    jQuery("a.bla-1").YouTubePopUp({
+        autoplay: 1
+    });
+});
+    </script>
+    <script>
+$('.nav-item a').click(function(e) {
+    $('.nav-item a').removeClass('active');
+    $(this).addClass('active');
+});
+$('#en').click(function(e) {
+    window.open("/","_self")
+});
+function notify(msg)
+{
+    $('#notify-bar').show();
+    $('#notify').html(msg);
+    setTimeout(function(){ $('#notify-bar').hide(); }, 3000);
+}
+function notifyErr(msg)
+{
+    $('#notifyErr-bar').show();
+    $('#notifyErr').html(msg);
+    setTimeout(function(){ $('#notifyErr-bar').hide(); }, 3000);
+}
+    </script>
+</template>

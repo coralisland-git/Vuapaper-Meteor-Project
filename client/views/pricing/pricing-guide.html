@@ -1,0 +1,364 @@
+
+
+<template name = "pricing">
+
+			<script>$(document).prop('title', 'Vuapaper | Pricing Guide');</script>
+			
+        <!--=============== Hero Section ===============-->
+        <section class="hero hero-page has-pattern-stripes">
+            <div class="container text-center">
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb d-flex justify-content-center">
+                    <li class="breadcrumb-item"><a href="/" class="animsition-link">Home</a></li>
+                    <li class="breadcrumb-item active">Pricing Guide</li>
+                </ul>
+
+                <h1>Pricing Guide</h1>
+                <p class="text-template col-md-10 push-md-1">All prices are given in USD for writing one page. You will be able to choose current during checkout. For over eight years now.</p>
+            </div>
+        </section>
+        <!--=============== /. Hero Section ===============-->
+
+
+        <!--=============== Prices Dependency Section ===============-->
+        <section class="dependency">
+            <div class="container text-center">
+                <header>
+                    <h2>The Price is based on</h2>
+                </header>
+
+                <div class="row">
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/e-learning.gif" alt="..." width="50">
+                        </div>
+                        <h4>Academic level</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/report.gif" alt="..." width="50">
+                        </div>
+                        <h4>Number of pages</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/sand-clock.gif" alt="" width="50">
+                        </div>
+                        <h4>Order urgency</h4>
+                    </div><!-- /. Item -->
+
+                    <!-- Item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="icon">
+                            <img src="img/order.gif" alt="" width="50">
+                        </div>
+                        <h4>Type of paper needed</h4>
+                    </div><!-- /. Item -->
+                </div>
+            </div>
+        </section>
+        <!--=============== /. Prices Dependency Section ===============-->
+
+
+        <!--=============== Tables Section ===============-->
+        <section class="prices-tables no-padding">
+
+            <div class="level diploma">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">1</strong>
+                        <h2>
+                            <span>Academic Level</span>
+                            Diploma
+                        </h2>
+                    </header>
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Deadline</th>
+                                    <th>USD</th>
+                                    <th>OMR</th>
+                                    <th>SAR</th>
+                                    <th>QAR</th>
+                                    <th>AED</th>
+                                    <th>KWD</th>
+                                    <th>BHD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+							
+							{{#each getDiplomas}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}}</th>
+									<td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+							
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level bachelor">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">2</strong>
+                        <h2>
+                            <span>Academic Level</span>
+                            Bachelor
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Deadline</th>
+                                    <th>USD</th>
+                                    <th>OMR</th>
+                                    <th>SAR</th>
+                                    <th>QAR</th>
+                                    <th>AED</th>
+                                    <th>KWD</th>
+                                    <th>BHD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+							{{#each getBachelors}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}}</th>
+									 <td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level mater">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">3</strong>
+                        <h2>
+                            <span>Academic Level</span>
+                            Master
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Deadline</th>
+                                    <th>USD</th>
+                                    <th>OMR</th>
+                                    <th>SAR</th>
+                                    <th>QAR</th>
+                                    <th>AED</th>
+                                    <th>KWD</th>
+                                    <th>BHD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+							{{#each getMasters}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}}</th>
+									<td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="level phd">
+                <div class="container text-center">
+
+                    <header class="d-flex align-items-center justify-content-center">
+                        <strong class="number">4</strong>
+                        <h2>
+                            <span>Academic Level</span>
+                            PhD
+                        </h2>
+                    </header>
+
+
+                    <div class="table-holder has-shadow table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Deadline</th>
+                                    <th>USD</th>
+                                    <th>OMR</th>
+                                    <th>SAR</th>
+                                    <th>QAR</th>
+                                    <th>AED</th>
+                                    <th>KWD</th>
+                                    <th>BHD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+							{{#each getPhDs}}	
+                                <tr>
+                                   <th scope="row">{{deadline}} {{#if $eq deadlineunit "0"}} Days {{/if}} {{#if $eq deadlineunit "1"}} Hours {{/if}}</th>
+									<td>{{price}}</td>
+                                    <td>{{priceOMR}}</td>
+                                    <td>{{priceSAR}}</td>
+                                    <td>{{priceQAR}}</td>
+                                    <td>{{priceAED}}</td>
+                                    <td>{{priceKWD}}</td>
+                                    <td>{{priceBHD}}</td>
+                                </tr>
+                            {{/each}}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=============== /. Tables Section ===============-->
+
+
+
+        <!--=============== Bank Accounts Section ===============-->
+		
+
+        <!--=============== Bank Accounts Section ===============-->
+        <section class="bank-accounts padding-small gray-bg ltr">
+            <div class="container">
+
+                <header class="text-center">
+                    <h2>Our Bank Accounts</h2>
+                   <p class="text-template col-md-8 push-md-2">Payment method is no longer a problem. We ensured that such inconvenience will not stand in the way between you and your dream project, regardless of the method that most suits you.</p>
+                </header>
+
+                <div class="row align-items-stretch justify-content-center">
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/visa.svg" alt="Visa" class="visa img-fluid">
+                            </div>
+                            <div class="card-body">
+                                  <ul class="account-details list-unstyled">
+                                    <li><span>Name:</span>Majid Khamis Sulaiman</li>
+                                    <li><span>Phone Number:</span>+968 95444316</li>
+                                    <li><span>Account Number:</span>0440006588830028</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/mastercard.svg" alt="Mastercard" class="mastercard img-fluid" width="50">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li><span>Name:</span>Vua Paper</li>
+                                    <li><span>Phone Number:</span> +968 95444316</li>
+                                    <li><span>Account Number:</span> 5594070000646783</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/western-union.svg" alt="Western Union" class="paypal img-fluid" width="80">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li><span>Name:</span>Aamer Ahmed Abdullah Al-Rahbi</li>
+                                    <li><span>Phone Number:</span> +968 95444316</li>
+                                    <li><span>Branch:</span> Muscat- Alkhuwair</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/paypal.svg" alt="Paypal" class="paypal img-fluid">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled"><ul class="account-details list-unstyled">
+                                    <li><span>Name:</span>Vua Paper</li>
+                                    <li><span>Status:</span> Available</li>
+                                </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+
+                    <!-- Account -->
+                    <div class="col-lg-6">
+                        <div class="account card text-right rtl">
+                            <div class="card-header d-flex justify-content-center align-items-center">
+                                <img src="img/bankmuscat.svg" alt="Bank Muscat" class="bank-muskat img-fluid" width="100">
+                            </div>
+                            <div class="card-body">
+                                <ul class="account-details list-unstyled">
+                                    <li><span>Name:</span>Majid Khamis Sulaiman</li>
+                                    <li><span>Phone Number:</span>+968 95444316</li>
+                                    <li><span>Account Number:</span>0440006588830028</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- /. Account -->
+                </div>
+            </div>
+        </section>
+
+        <!--=============== /. Bank Accounts Section ===============-->
+
+
+     </template>

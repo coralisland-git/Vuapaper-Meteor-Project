@@ -1,0 +1,88 @@
+
+	<template name="reportar">
+
+	
+					<script>$(document).prop('title', 'Vuapaper | تقرير الاقتباس');</script>
+	
+            <!--===============  Enquiry Form Section ===============-->
+            <section class="enquiry has-pattern-stripes gray-bg ltr">
+                <div class="container">
+
+                    <header class="text-center">
+                        <h2>تقرير فحص الاقتباس</h2>
+                        <p class="text-template">أطلب الآن فحص نهائي وشامل للعمل لبيان أي سرقة للمحتوى لتجنب وجود الأخطاء التي قد تؤدي إلى اقصاء عملك</p>
+                        <strong class="h2 underlined-gradient font-english">$9.90</strong>
+                    </header>
+
+                    <div class="form-holder has-shadow col-md-10 push-md-1">
+                        <form action="#" id="enquiryForm" class="rtl">
+                            <div class="form-group">
+                                <label for="name" class="required">الإسم</label>
+                                <input class="form-control" type="text" name="name" id="name" placeholder="أدحل أسمك">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="required">البريد الإلكتروني</label>
+                                <input class="form-control" type="email" name="email" id="email" placeholder="أدخل بريدك الإلكتروني">
+                            </div>
+                            <div class="form-group ltr text-right">
+                                <label for="phone">الهاتف <span>- اختياري</span> </label>
+                                <input class="form-control" type="tel" name="phone" id="phone" placeholder="أدخل رقم الهاتف">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="required">الرسالة</label>
+                                <textarea class="form-control" name="message" id="message" placeholder="كيف يمكننا مساعدتك"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="files" id="file" class="input-file" data-multiple-caption="{count} files selected" multiple>
+                                <label for="file" class="btn-gradient"><span>رفع الملفات</span></label>
+                            </div>
+							
+							<div class="form-group">
+                                <label>طريقة الدفع</label>
+                                <div class="form-group row d-flex align-items-start">
+                                    <div class="payment-system col-lg-9 d-flex align-items-center flex-wrap">
+                                        <label for="paypal">
+                                            <input type="radio" name="payment-system" id="paypal" class="hidden" value="paypal" checked>
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/paypal.svg" alt="paypal" width="70">
+                                            </span>
+                                        </label>
+                                        <label for="visa">
+                                            <input type="radio" name="payment-system" id="visa" class="hidden" value="Visa">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/visa.svg" alt="visa" width="50">
+                                            </span>
+                                        </label>
+										 <label for="master">
+                                            <input type="radio" name="payment-system" id="master" class="hidden">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/mastercard.svg" alt="master" width="50">
+                                            </span>
+                                        </label>
+                                        <label for="western-union">
+                                            <input type="radio" name="payment-system" id="western-union" class="hidden" value="Western union">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/western-union.svg" alt="western-union" >
+                                            </span>
+                                        </label>
+                                        <label for="bank-muskat">
+                                            <input type="radio" name="payment-system" id="bank-muskat" class="hidden" value="Bank Muskat">
+                                            <span class="payment-link d-flex align-items-center shadow-on-hover">
+                                                <img src="img/bankmuscat.svg" alt="bank muskat" >
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+							
+                            <div class="form-group clearfix">
+                                <button class="btn-template font-arabic" type="submit">قم بإرسال تقريرك</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!--=============== Enquiry Form Section ===============-->
+
+
+</template>
